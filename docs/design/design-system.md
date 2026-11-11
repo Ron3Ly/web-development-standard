@@ -5,6 +5,8 @@ Primary reference: [Digital Agency Design System (DADS)](https://design.digital.
 
 Use its guidance for accessibility, user needs, typography, spacing, components, navigation and forms as a **design reference**. It does not require copying the agency's branding or colors.
 
+Also read [UI Design, UX & Accessibility Guidelines](ui-guidelines.md) for six named sources: NN/g, Microsoft Windows Design, WAI-ARIA APG, Digital Agency, IBM Carbon and WCAG 2.2. WCAG 2.2 is the testable accessibility criteria reference; APG provides interactive pattern guidance; the others provide UX/design guidance dependent on context.
+
 ## Optional implementation system: Astryx
 
 [Astryx](https://github.com/meta/astryx) is a candidate React component system (150+ components, theme tokens, templates and agent-oriented CLI). It complements — **does not supersede** — the Digital Agency Design System's principles. It is beta and requires React 19+; do not automatically install it. If the project chooses Astryx, use its documented component APIs, themes and tokens rather than rebuilding existing primitives. See [Astryx integration notes](astryx.md).
@@ -17,7 +19,8 @@ Use its guidance for accessibility, user needs, typography, spacing, components,
 - Support mobile/tablet/desktop. Check real content lengths, Japanese line breaking and text zoom.
 
 ## Accessibility / interaction
-- Aim for WCAG 2.2 AA appropriate to the product's applicable requirements.
+- Aim for WCAG 2.2 AA as the common quality target, subject to the project's applicable legal and product requirements. Do not equate automated-check success with full conformance.
+- Use WAI-ARIA APG for complex interactive widget keyboard behavior and ARIA patterns, and prefer native HTML semantics.
 - Use semantic elements, accessible labels and visible keyboard focus; keep contrast sufficient.
 - Use obvious loading, empty, success, validation and error states.
 - Prefer reduced motion for users who request it; animation should communicate purpose.

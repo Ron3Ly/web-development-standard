@@ -6,7 +6,7 @@ This repository is a **shared standards reference**, not an executable applicati
 Before planning, designing, or implementing a website:
 1. Read `docs/architecture/tech-stack.md`.
 2. Read `docs/architecture/cloudflare.md` and `docs/architecture/authentication.md` when relevant.
-3. Read `docs/design/design-system.md`, `docs/design/ui-references.md`, and `docs/design/ui-assets.md`. Read `docs/design/astryx.md` when evaluating or using UI components.
+3. Read `docs/design/ui-guidelines.md`, `docs/design/design-system.md`, `docs/design/ui-references.md`, and `docs/design/ui-assets.md`. Read `docs/design/astryx.md` when evaluating or using UI components.
 4. Read `docs/architecture/external-integrations.md` if using music APIs.
 5. Read the active project's brief. Use `docs/project/brief.template.md` if none exists.
 
@@ -22,7 +22,9 @@ Before planning, designing, or implementing a website:
 - Music integrations (Spotify, Apple Music, YouTube, setlist.fm, MusicBrainz, Deezer) are **opt-in**.
 
 ## Design defaults
-- Start from the Digital Agency Design System's usability and accessibility principles.
+- Read the six design/UX/accessibility sources in `docs/design/ui-guidelines.md`: Nielsen Norman Group, Microsoft Windows Design, W3C WAI-ARIA APG, Digital Agency Design System, IBM Carbon, and W3C WCAG 2.2. Apply each in its relevant scope; **not every source is a normative standard or mandatory UI library**.
+- Use WCAG 2.2 Level AA as a default accessibility design/verification target unless the project specifies a different applicable requirement. Use APG patterns for keyboard and ARIA interaction guidance; prefer native semantic HTML. Do not claim conformance without verification.
+- Start from the Digital Agency Design System's usability and accessibility principles, particularly for Japanese-language services.
 - Consider Astryx as a component implementation resource and design-system reference, not a replacement for the Digital Agency design principles. If selected, consult the pinned project's Astryx CLI/component documentation; do not invent component APIs.
 - Prefer existing components and tokens, consistent responsive layout, meaningful interaction and restrained motion.
 - Approved candidate asset sources: Lucide Animated, ICOOON MONO, Digital Agency illustration/icon assets, freeicon.dev.
@@ -35,7 +37,7 @@ Before planning, designing, or implementing a website:
 3. Document assumptions and deviations before installing new frameworks/libraries.
 4. Implement minimal, reusable, accessible code; protect secrets server-side.
 5. Where available, run the project's lint, type check, tests and production build.
-6. Review mobile, desktop, keyboard navigation, error states, loading states and event analytics.
+6. Review mobile, desktop, keyboard navigation, error states, loading states and event analytics. Cross-check relevant WCAG 2.2 criteria and APG interaction patterns, and report accessibility checks that could not be completed.
 7. Report changed files, validation, known limitations and deviations.
 
 ## Rules for other repositories

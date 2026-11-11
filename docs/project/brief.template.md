@@ -12,7 +12,7 @@
 - Required pages:
 - Forms and interactions:
 - Responsive priorities:
-- Accessibility / legal requirements:
+- Accessibility / legal requirements (default target WCAG 2.2 AA; confirm scope):
 
 ## Technical choices
 - JavaScript or TypeScript:
@@ -31,6 +31,8 @@
 - Brand colors and logo rights:
 - Font and Japanese fallback:
 - Reference UI and specific patterns:
+- Applied design/UX guidelines (Digital Agency, NN/g, Windows, Carbon) and rationale:
+- WCAG 2.2 criteria / APG interaction patterns requiring manual verification:
 - Icon/illustration choices and license notes:
 - Design system exceptions:
 
