@@ -19,6 +19,7 @@ GPT Work・Codex・GitHubで再利用する、Webサイト設計・実装の共�
 | 計測 | Google Analytics 4 / Cloudflare Web Analytics |
 | フォント | Geist（日本語には適切なフォールバックを指定） |
 | スタイリング | CSS / ユーティリティクラス |
+| UIコンポーネント候補 | [Astryx](https://github.com/meta/astryx)（React 19+、ベータ版、案件ごとに採用判断） |
 | 言語 | JavaScript / TypeScript（案件ごとに決定、未確定） |
 
 音楽関連の外部連携候補：Spotify、Apple Music、YouTube、setlist.fm、MusicBrainz、Deezer。すべてを標準搭載するという意味ではありません。
@@ -26,6 +27,7 @@ GPT Work・Codex・GitHubで再利用する、Webサイト設計・実装の共�
 ## 共通UI設計
 
 - **主な設計指針**：[デジタル庁デザインシステム](https://design.digital.go.jp/dads/)（アクセシビリティ、情報設計、フォーム、コンポーネント）
+- **UIコンポーネント基盤の候補**：[Astryx（Meta）](https://github.com/meta/astryx) — 150以上のReactコンポーネント、テーマ、CLI。デジタル庁の設計指針と併用可能。導入は任意で、Vinext / RSC / Cloudflareとの実動作検証が必要。詳しくは [Astryx利用指針](docs/design/astryx.md)。
 - **UIアセット**：[Lucide Animated](https://lucide-animated.com/) / [ICOOON MONO](https://icooon-mono.com/) / [デジタル庁イラストレーション・アイコン](https://www.digital.go.jp/policies/servicedesign/designsystem/Illustration_Icons) / [freeicon.dev（Motive）](https://freeicon.dev/)
 - ライセンスは出典ごとに異なります。詳細は [UIアセット使用指針](docs/design/ui-assets.md) に記載します。
 
@@ -39,6 +41,7 @@ GPT Work・Codex・GitHubで再利用する、Webサイト設計・実装の共�
 | [docs/architecture/authentication.md](docs/architecture/authentication.md) | Google/匿名認証の設計判断 |
 | [docs/architecture/external-integrations.md](docs/architecture/external-integrations.md) | 外部音楽サービス/API連携 |
 | [docs/design/design-system.md](docs/design/design-system.md) | UI/UX・アクセシビリティ・スタイル |
+| [docs/design/astryx.md](docs/design/astryx.md) | Astryxコンポーネント・テーマ・CLIの導入判断 |
 | [docs/design/ui-references.md](docs/design/ui-references.md) | 参照UI・設計パターンの取り入れ方 |
 | [docs/design/ui-assets.md](docs/design/ui-assets.md) | アイコン・イラスト素材と利用条件 |
 | [docs/project/brief.template.md](docs/project/brief.template.md) | 案件固有要件のひな型 |
@@ -73,4 +76,4 @@ GPT Work・Codex・GitHubで再利用する、Webサイト設計・実装の共�
 
 このリポジトリは文章・規約を管理します。新規依存関係や大きな設計変更は、用途・互換性・メリット・移行コストを記録してから反映してください。
 
-最終整理：2026-11-11 / 初期版 1.1
+最終整理：2026-11-11 / 現在版 1.2

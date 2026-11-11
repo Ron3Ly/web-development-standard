@@ -6,7 +6,7 @@ description: Implement a website page following the standard React/Vinext/Cloudf
 # Implement Page
 1. Inspect the active project's code, `AGENTS.md`, lockfile, brief and tech-stack docs.
 2. Check compatibility of each needed Vinext/Cloudflare feature before coding.
-3. Reuse components and design tokens. Prefer RSC unless interaction requires client code.
+3. Reuse components and design tokens. Prefer RSC unless interaction requires client code. If Astryx is chosen by the project, read `docs/design/astryx.md`, use the pinned CLI for component APIs, and validate Vinext/RSC integration before changes.
 4. Add only the necessary APIs, bindings, dependencies and permissions.
 5. Protect credentials; ensure data authorization and safe error/loading states.
 6. Run applicable lint, typecheck, tests and build from actual package scripts.

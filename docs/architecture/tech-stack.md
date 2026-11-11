@@ -16,11 +16,13 @@
 | Analytics | Cloudflare Web Analytics | Optional |
 | Font | Geist | Add Japanese fallback when relevant |
 | Styles | CSS + utility classes | Utility framework **not specified** |
+| UI components (candidate) | [Astryx](https://github.com/meta/astryx) | Optional; React 19+, currently beta. Requires runtime/build/RSC validation |
 | Language | JavaScript or TypeScript | **Undecided**: inspect each repo; choose deliberately |
 | External integrations | Spotify, Apple Music, YouTube, setlist.fm, MusicBrainz, Deezer | Opt-in per project |
 
 ## Decision rules
-- Do **not** silently replace Vinext with Next.js, introduce Tailwind/shadcn, add a database, auth framework or external service without need.
+- Do **not** silently replace Vinext with Next.js, introduce Tailwind/shadcn, Astryx, a database, auth framework or external service without need.
+- If Astryx is selected, confirm React 19+, package/peer-dependency compatibility, CSS import order and RSC client boundaries; follow [Astryx guidelines](../design/astryx.md).
 - Do not assume full Next.js compatibility. Confirm RSC, routing, middleware/edge compatibility, caching, image handling and deployment against the currently pinned Vinext version.
 - Check official docs and pin dependency versions in the project lockfile.
 - Maintain server/client boundaries, avoid leaking secrets or making privileged API calls from the browser.

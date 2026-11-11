@@ -6,7 +6,7 @@ This repository is a **shared standards reference**, not an executable applicati
 Before planning, designing, or implementing a website:
 1. Read `docs/architecture/tech-stack.md`.
 2. Read `docs/architecture/cloudflare.md` and `docs/architecture/authentication.md` when relevant.
-3. Read `docs/design/design-system.md`, `docs/design/ui-references.md`, and `docs/design/ui-assets.md`.
+3. Read `docs/design/design-system.md`, `docs/design/ui-references.md`, and `docs/design/ui-assets.md`. Read `docs/design/astryx.md` when evaluating or using UI components.
 4. Read `docs/architecture/external-integrations.md` if using music APIs.
 5. Read the active project's brief. Use `docs/project/brief.template.md` if none exists.
 
@@ -17,11 +17,13 @@ Before planning, designing, or implementing a website:
 - GA4 and Cloudflare Web Analytics when specified and privacy requirements permit.
 - Geist for Latin text, with a suitable Japanese fallback.
 - CSS with utility classes. **Do not assume Tailwind or shadcn/ui is mandatory**.
+- [Astryx](https://github.com/meta/astryx) is an **optional React 19+ UI component/design-system candidate**, not a mandatory dependency. It is in beta; verify Vinext/RSC/Vite/Cloudflare compatibility before adoption.
 - JavaScript or TypeScript: the original preference is unresolved; inspect existing code and confirm for greenfield work.
 - Music integrations (Spotify, Apple Music, YouTube, setlist.fm, MusicBrainz, Deezer) are **opt-in**.
 
 ## Design defaults
 - Start from the Digital Agency Design System's usability and accessibility principles.
+- Consider Astryx as a component implementation resource and design-system reference, not a replacement for the Digital Agency design principles. If selected, consult the pinned project's Astryx CLI/component documentation; do not invent component APIs.
 - Prefer existing components and tokens, consistent responsive layout, meaningful interaction and restrained motion.
 - Approved candidate asset sources: Lucide Animated, ICOOON MONO, Digital Agency illustration/icon assets, freeicon.dev.
 - Check **specific asset licenses** before copying or redistributing. Respect reduced-motion preferences.

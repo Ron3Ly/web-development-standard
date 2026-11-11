@@ -5,6 +5,10 @@ Primary reference: [Digital Agency Design System (DADS)](https://design.digital.
 
 Use its guidance for accessibility, user needs, typography, spacing, components, navigation and forms as a **design reference**. It does not require copying the agency's branding or colors.
 
+## Optional implementation system: Astryx
+
+[Astryx](https://github.com/meta/astryx) is a candidate React component system (150+ components, theme tokens, templates and agent-oriented CLI). It complements — **does not supersede** — the Digital Agency Design System's principles. It is beta and requires React 19+; do not automatically install it. If the project chooses Astryx, use its documented component APIs, themes and tokens rather than rebuilding existing primitives. See [Astryx integration notes](astryx.md).
+
 ## Visual defaults
 - Readable hierarchy, clear navigation, consistent components and generous but purposeful whitespace.
 - Geist is the preferred Latin font; select a legible Japanese fallback (e.g., system Japanese sans-serif) and test mixed scripts.

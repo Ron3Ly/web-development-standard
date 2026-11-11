@@ -18,6 +18,7 @@
 - JavaScript or TypeScript:
 - Vinext version and verified features:
 - CSS strategy / utility framework (if any):
+- UI component library: Astryx (adopt / reference only / do not use), version and rationale:
 - Cloudflare Workers setup:
 - D1 required? Schema/migrations:
 - R2 required? Storage policy:
