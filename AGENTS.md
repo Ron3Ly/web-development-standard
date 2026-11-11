@@ -22,9 +22,9 @@ Before planning, designing, or implementing a website:
 - Music integrations (Spotify, Apple Music, YouTube, setlist.fm, MusicBrainz, Deezer) are **opt-in**.
 
 ## Design defaults
-- Read the six design/UX/accessibility sources in `docs/design/ui-guidelines.md`: Nielsen Norman Group, Microsoft Windows Design, W3C WAI-ARIA APG, Digital Agency Design System, IBM Carbon, and W3C WCAG 2.2. Apply each in its relevant scope; **not every source is a normative standard or mandatory UI library**.
-- Use WCAG 2.2 Level AA as a default accessibility design/verification target unless the project specifies a different applicable requirement. Use APG patterns for keyboard and ARIA interaction guidance; prefer native semantic HTML. Do not claim conformance without verification.
-- Start from the Digital Agency Design System's usability and accessibility principles, particularly for Japanese-language services.
+- Use `docs/design/ui-guidelines.md` as the **primary 30-item application-development guideline** across six areas: UX/usability (1–7), UI/information design (8–14), accessibility/environment (15–19), performance/reliability (20–23), security/data protection (24–26), and QA/operations/improvement (27–30). Apply context-relevant recommendations; the source explicitly distinguishes standards, design guidance and best practices.
+- Consider WCAG 2.2 Level AA as the accessibility target candidate identified in guideline No.15; confirm the actual project requirement. Use APG patterns for keyboard/ARIA interaction guidance (No.16), preferring native semantic HTML. Do not claim conformance without verification.
+- Follow the source document's prioritization: first detail No.1–14 and No.15–16 for interactive web applications; also address applicable performance, security and QA practices before delivery. Use the Digital Agency Design System for relevant Japanese-language UI patterns.
 - Consider Astryx as a component implementation resource and design-system reference, not a replacement for the Digital Agency design principles. If selected, consult the pinned project's Astryx CLI/component documentation; do not invent component APIs.
 - Prefer existing components and tokens, consistent responsive layout, meaningful interaction and restrained motion.
 - Approved candidate asset sources: Lucide Animated, ICOOON MONO, Digital Agency illustration/icon assets, freeicon.dev.
@@ -37,7 +37,7 @@ Before planning, designing, or implementing a website:
 3. Document assumptions and deviations before installing new frameworks/libraries.
 4. Implement minimal, reusable, accessible code; protect secrets server-side.
 5. Where available, run the project's lint, type check, tests and production build.
-6. Review mobile, desktop, keyboard navigation, error states, loading states and event analytics. Cross-check relevant WCAG 2.2 criteria and APG interaction patterns, and report accessibility checks that could not be completed.
+6. Review the applicable 30-item guideline checks, including responsive behavior, selection and table workflows, WCAG/APG interactions, Core Web Vitals, server-side authorization, privacy, E2E tests and monitoring as relevant. Distinguish recommendations from mandatory requirements and report unverified checks.
 7. Report changed files, validation, known limitations and deviations.
 
 ## Rules for other repositories

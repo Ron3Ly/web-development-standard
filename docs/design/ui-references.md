@@ -4,14 +4,9 @@
 - [Digital Agency Design System](https://design.digital.go.jp/dads/): usability, accessibility, form patterns, information architecture, components, typography and interaction guidance.
 - [Digital Agency original design system page](https://www.digital.go.jp/policies/servicedesign/designsystem): source portal / background.
 
-## UI / UX / accessibility guidelines
-See [UI Design, UX & Accessibility Guidelines](ui-guidelines.md) for the six-source catalog, scope and priority rules:
-- [Nielsen Norman Group](https://www.nngroup.com/) — usability research and UX principles.
-- [Microsoft Learn — Windows Design](https://learn.microsoft.com/en-us/windows/apps/design/) — Windows / desktop-inspired interaction patterns, applied only when relevant.
-- [W3C WAI-ARIA APG](https://www.w3.org/WAI/ARIA/apg/) — interactive widget semantics and keyboard patterns.
-- [Digital Agency Design System](https://design.digital.go.jp/) — Japanese-oriented interface design.
-- [IBM Carbon Design System](https://carbondesignsystem.com/) — complex applications, component patterns and tokens.
-- [W3C WCAG 2.2](https://www.w3.org/TR/WCAG22/) — testable accessibility success criteria.
+## Web application design and development guidelines
+
+The [Webアプリケーション開発ガイドライン（全30項目）](ui-guidelines.md) is the shared working reference for six areas: UX, UI/information architecture, accessibility, performance/reliability, security/data protection, and quality/operations. It retains the original recommendations and official citations from the uploaded source. Prioritize the specific numbered items that apply to the project; do not treat every recommended practice as a mandatory standard.
 
 ## React component system reference (optional)
 - [Meta Astryx](https://github.com/meta/astryx) / [component Storybook](https://astryx.atmeta.com/storybook/): accessible React UI components, tokens, interaction patterns and page templates. Use as a practical implementation candidate, not as a required brand visual. See [Astryx guidelines](astryx.md).

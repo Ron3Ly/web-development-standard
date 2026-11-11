@@ -5,7 +5,7 @@ Primary reference: [Digital Agency Design System (DADS)](https://design.digital.
 
 Use its guidance for accessibility, user needs, typography, spacing, components, navigation and forms as a **design reference**. It does not require copying the agency's branding or colors.
 
-Also read [UI Design, UX & Accessibility Guidelines](ui-guidelines.md) for six named sources: NN/g, Microsoft Windows Design, WAI-ARIA APG, Digital Agency, IBM Carbon and WCAG 2.2. WCAG 2.2 is the testable accessibility criteria reference; APG provides interactive pattern guidance; the others provide UX/design guidance dependent on context.
+Also read the [Webアプリケーション開発ガイドライン（6分野・30項目）](ui-guidelines.md) for practical recommendations and references covering UX, UI, accessibility, performance, security and quality/operations. The attached source text is kept intact; its recommendations must be adapted to the product's audience and requirements.
 
 ## Optional implementation system: Astryx
 
@@ -19,7 +19,7 @@ Also read [UI Design, UX & Accessibility Guidelines](ui-guidelines.md) for six n
 - Support mobile/tablet/desktop. Check real content lengths, Japanese line breaking and text zoom.
 
 ## Accessibility / interaction
-- Aim for WCAG 2.2 AA as the common quality target, subject to the project's applicable legal and product requirements. Do not equate automated-check success with full conformance.
+- Consider WCAG 2.2 AA as a baseline candidate per guideline No.15; confirm the project's applicable requirements. Do not equate automated-check success with full conformance.
 - Use WAI-ARIA APG for complex interactive widget keyboard behavior and ARIA patterns, and prefer native HTML semantics.
 - Use semantic elements, accessible labels and visible keyboard focus; keep contrast sufficient.
 - Use obvious loading, empty, success, validation and error states.
@@ -33,8 +33,9 @@ Also read [UI Design, UX & Accessibility Guidelines](ui-guidelines.md) for six n
 - Use project-specific theme variables rather than assuming brand colors from references.
 
 ## Review
-1. Compare pages and component states against the shared visual rules.
-2. Test keyboard-only and zoomed-in layouts.
-3. Test motion reduction and dark mode if supported.
-4. Check no third-party icon/image violates the asset license.
-5. Note intentional exceptions in the project brief.
+1. Read the applicable numbered recommendations in [the 30-item guidelines](ui-guidelines.md), especially No.1–16 for the design stage; use No.20–30 for performance, security and release reviews.
+2. Compare pages and component states against the shared visual rules.
+3. Test keyboard-only and zoomed-in layouts.
+4. Test motion reduction and dark mode if supported.
+5. Check no third-party icon/image violates the asset license.
+6. Note intentional exceptions in the project brief.

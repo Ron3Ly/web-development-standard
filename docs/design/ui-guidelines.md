@@ -1,66 +1,121 @@
-# UI Design, UX & Accessibility Guidelines
+# Webアプリケーション開発ガイドライン一覧（全30項目）
 
-> Reviewed links: 2026-11-11. This catalog is part of the shared **Web Development Standard** used by GPT Work and Codex. It defines which source to consult for each design decision; it does not require installing every design system's code.
+業務用Webアプリケーション（データ一覧、検索、編集、複数選択、一括処理など）を主な対象として、**6分野・30項目**の設計方針と参考ガイドラインをまとめたものです。
 
-## 1. Reference catalog (user-specified)
+## 参照資料の分類
 
-| No. | Source | Official URL | Main application | Status in this standard |
-| --- | --- | --- | --- | --- |
-| 1 | Nielsen Norman Group (NN/g) | https://www.nngroup.com/ | UX research, usability heuristics, information architecture, user journeys, feedback | Advisory research/guidance, not a normative technical standard |
-| 2 | Microsoft Learn — Windows Design | https://learn.microsoft.com/en-us/windows/apps/design/ | Windows platform conventions, Fluent interaction principles, navigation, desktop input patterns | Context-specific reference; not mandatory for ordinary websites |
-| 3 | W3C WAI-ARIA Authoring Practices Guide (APG) | https://www.w3.org/WAI/ARIA/apg/ | Accessible widgets, roles, states, properties, focus and keyboard interaction | Practical implementation patterns; not a replacement for WCAG requirements |
-| 4 | Digital Agency Design System (デジタル庁デザインシステム) | https://design.digital.go.jp/ | Japanese-language UI, typography, forms, components, accessibility, understandable information structure | Principal design reference, especially for Japan-facing services; URL may redirect to /dads/ |
-| 5 | IBM Carbon Design System | https://carbondesignsystem.com/ | Enterprise UI, complex tables, forms, components, tokens, layout patterns | Optional pattern/reference system; no default dependency on Carbon React |
-| 6 | W3C Web Content Accessibility Guidelines (WCAG) 2.2 | https://www.w3.org/TR/WCAG22/ | Testable accessibility success criteria for web content | **Default target: Level AA**, subject to applicable product and legal requirements |
+- **標準・規格**：WCAGなど、準拠基準として利用できるもの
+- **設計ガイドライン**：Microsoft、IBM Carbon、GOV.UKなど、具体的なUIの実装方針を示すもの
+- **ベストプラクティス**：NN/g、MDN、OWASPなど、設計判断や技術選定の根拠になるもの
 
-## 2. How to combine them
+> **注意：**「推奨される設計方針」は各参照資料を踏まえた実務向けの要約です。すべてが規格上の必須要件というわけではありません。採用時には対象ユーザー、対応環境、製品要件に応じて調整してください。
 
-- **Accessibility quality target:** Design and review against applicable **WCAG 2.2 Level AA** success criteria unless the project has an explicitly documented different target or legal requirement. A successful automated scan is not proof of WCAG conformance.
-- **Widget behavior:** Use **native semantic HTML first**. For custom widgets (dialog, tab list, combobox, menu, tree, etc.), consult **WAI-ARIA APG** patterns and test actual keyboard, focus and screen-reader behavior. APG examples are informative implementation guidance, not a guarantee of conformance.
-- **Usability and UX:** Use **NN/g** research and heuristics to evaluate clarity, learnability, error prevention, feedback and user flow; tailor findings to evidence from the current audience.
-- **Japanese UX and visual consistency:** Use the **Digital Agency Design System** as the first stop for Japanese-language forms, information hierarchy, input patterns, typography and interface clarity. Its government-oriented branding need not be copied.
-- **Desktop / Windows contexts:** Consult **Microsoft Windows Design** when a site aims to reproduce desktop-app behavior, supports Windows-centric keyboard/mouse patterns, or is a Windows application. Do not force Windows-only design conventions onto cross-platform responsive websites.
-- **Complex enterprise interfaces:** Consult **IBM Carbon** for data-dense layouts, complex forms, tables, filtering and enterprise workflows. Use component patterns as a reference; installing Carbon's runtime library is an independent project decision.
-- **Component implementation:** [Astryx](astryx.md) is a separate optional React component system; it does not supersede these guidelines. Use documented APIs, and evaluate compatibility with React 19, Vinext, RSC and Cloudflare.
+## 1. UX・ユーザビリティ設計（7項目）
 
-## 3. Priorities when advice conflicts
+| No. | 項目 | 推奨される設計方針 | 参照ガイドライン |
+|---|---|---|---|
+| 1 | 操作性 | 複数選択はCtrl・Shift操作だけに依存せず、チェックボックスなども用意する。ドラッグ操作には代替手段を設ける | [Microsoft：選択モード](https://learn.microsoft.com/ja-jp/windows/apps/develop/ui/controls/selection-modes)、[WCAG：Dragging Movements](https://www.w3.org/WAI/WCAG22/Understanding/dragging-movements) |
+| 2 | 直感性 | ユーザーに馴染みのある用語・アイコン・操作モデルを採用する。機能を推測させない | [NN/g：10 Usability Heuristics](https://www.nngroup.com/articles/ten-usability-heuristics/) |
+| 3 | 一貫性 | 同じ機能は画面をまたいでも同じ名称・操作・配置・動作に統一する | [NN/g：Consistency and Standards](https://www.nngroup.com/articles/ten-usability-heuristics/) |
+| 4 | 操作効率 | 熟練ユーザーにはショートカットキーや一括操作を提供し、初心者も通常のUIで操作できるようにする | [NN/g：Flexibility and Efficiency of Use](https://www.nngroup.com/articles/ten-usability-heuristics/) |
+| 5 | フィードバック | 保存中、処理中、成功、失敗などを適切なタイミングで明示する | [NN/g：Visibility of System Status](https://www.nngroup.com/articles/visibility-system-status/) |
+| 6 | エラー防止・復旧 | 入力制約、確認、Undo機能を導入し、エラー発生時には原因と修正方法を説明する | [GOV.UK：Error message](https://design-system.service.gov.uk/components/error-message/) |
+| 7 | 学習容易性 | 主要機能は説明なしでも発見できる構成とし、複雑な操作には文脈に沿ったヘルプを設ける | [NN/g：Help and Documentation](https://www.nngroup.com/articles/ten-usability-heuristics/) |
 
-1. Applicable laws, security, privacy, product/user requirements and contractual accessibility obligations.
-2. Testable accessibility success criteria and usable keyboard/screen-reader behavior appropriate to the agreed WCAG target.
-3. The current audience's needs, real user research and platform/device constraints.
-4. Shared visual tokens, components and the project's own product/brand conventions.
-5. Advisory heuristics and optional component-pattern examples.
+**設計上のポイント：** 操作方法を標準化する際には、画面の見た目だけでなく、選択状態、フォーカス、キーボード操作、操作取消時の挙動まで定義すると、画面間の一貫性を高められます。
 
-Do **not** treat NN/g, Windows Design, Digital Agency, Carbon or APG as identical kinds of standards. Don't mix competing visual systems indiscriminately. Adopt the interaction principle, not branding, proprietary copy or unrelated dependencies.
+## 2. UI・画面・情報設計（7項目）
 
-## 4. Design & review checklist
+| No. | 項目 | 推奨される設計方針 | 参照ガイドライン |
+|---|---|---|---|
+| 8 | 情報アーキテクチャ | ユーザーの業務や目的に基づいて情報を分類する。メニュー階層を複雑にしすぎない | [GOV.UK：Navigate a service](https://design-system.service.gov.uk/patterns/navigate-a-service/) |
+| 9 | ナビゲーション | 現在位置と移動先を明確にする。階層が深い場合はパンくずリストを検討する | [GOV.UK：Breadcrumbs](https://design-system.service.gov.uk/components/breadcrumbs/) |
+| 10 | レイアウト | 情報の重要度に応じて配置を決め、余白と文字サイズの体系を統一する | [Carbon：Spacing](https://www.carbondesignsystem.com/building-blocks/foundations/spacing/overview) |
+| 11 | データ表示 | 表形式データにはテーブルを使用し、階層データにはツリー、内容重視の情報にはカードなどを使い分ける | [Carbon：Data table](https://www.carbondesignsystem.com/building-blocks/core/components/data-table/guidelines) |
+| 12 | 検索・絞り込み | 検索、フィルター、ソートを用途に応じて提供し、選択中の条件・並び順が分かるようにする | [Carbon：Data table guidelines](https://www.carbondesignsystem.com/building-blocks/core/components/data-table/guidelines) |
+| 13 | 入力フォーム | 入力ラベルを明示し、入力条件を事前に説明する。エラーでは具体的な訂正方法を示す | [デジタル庁：インプットテキスト](https://design.digital.go.jp/dads/components/input-text/usage/) |
+| 14 | デザインシステム | 色・文字・余白・アイコン・UI部品を共通ルールとして定義し、再利用可能にする | [Carbon：Themes・Design Tokens](https://www.carbondesignsystem.com/building-blocks/foundations/themes/overview) |
 
-### Before implementation
-- [ ] Define audience, language, target devices, common tasks and interaction complexity.
-- [ ] Set the accessibility target (default WCAG 2.2 AA) and any binding legal/contractual requirements.
-- [ ] Select relevant guidance sources and cite the exact page/pattern used.
-- [ ] Identify required components, native HTML alternatives, keyboard interactions and error states.
-- [ ] Choose one coherent visual-token system; document any intentional departures.
+**設計上のポイント：** データテーブルの行選択、一括操作、ソート、ページネーションなどは、コンポーネント単位で共通仕様として定義すると再利用しやすくなります。
 
-### During implementation
-- [ ] Semantic headings, landmarks, forms, labels, descriptions and status messages.
-- [ ] Keyboard access, visible focus, logical tab order and focus management.
-- [ ] Appropriate ARIA roles, states and properties **only where needed**.
-- [ ] Sufficient contrast, non-color cues, text resizing and responsive reflow.
-- [ ] Accessible authentication and form error handling.
-- [ ] Reduced-motion preferences and understandable interactions without animation.
+## 3. アクセシビリティ・利用環境（5項目）
 
-### Before delivery
-- [ ] Run available automated accessibility tests and manual keyboard checks.
-- [ ] Test relevant APG widget behaviors and consider assistive-technology testing.
-- [ ] Review mobile and desktop layouts with realistic Japanese copy.
-- [ ] Inspect relevant WCAG 2.2 Level AA criteria and record pass/fail/not-tested evidence.
-- [ ] Document usability concerns and the specific NN/g, Digital Agency, Windows or Carbon guidance applied.
-- [ ] Explicitly record unverified criteria. Never claim complete conformance based on a checklist or a linter alone.
+| No. | 項目 | 推奨される設計方針 | 参照ガイドライン |
+|---|---|---|---|
+| 15 | アクセシビリティ | 文字と背景のコントラスト、フォーカス表示、スクリーンリーダーへの対応を行う。WCAG 2.2 AAを基準候補とする | [W3C：WCAG 2.2 Understanding](https://www.w3.org/WAI/WCAG22/understanding/) |
+| 16 | キーボード操作 | Tab、Enter、Esc、矢印キーなどの操作を定義し、選択状態とキーボードフォーカスを区別する | [W3C：WAI-ARIA Patterns](https://www.w3.org/WAI/ARIA/apg/patterns/) |
+| 17 | レスポンシブ対応 | 画面幅に応じてレイアウトを変更する。拡大表示時にも必要な情報・操作を維持する | [MDN：レスポンシブウェブデザイン](https://developer.mozilla.org/ja/docs/Learn_web_development/Core/CSS_layout/Responsive_Design) |
+| 18 | ブラウザ互換性 | 対応ブラウザ・バージョンを定義し、利用するWeb APIやCSSの互換性を確認する | [web.dev：Baseline](https://web.dev/baseline) |
+| 19 | 多言語・地域対応 | 言語、日付、時刻、数値、通貨の表示を地域に応じて変更し、タイムゾーンも考慮する | [MDN：国際化](https://developer.mozilla.org/ja/docs/Web/JavaScript/Guide/Internationalization) |
 
-## 5. Source usage and updates
+**具体的な基準例：**
 
-- Revisit the official source for current guidance when starting a substantial design or audit; these sites evolve.
-- Link to sources instead of copying large portions of copyrighted documentation or proprietary design assets.
-- If adding a third-party component library, review its license, versions, dependencies, styling collisions and runtime compatibility before adoption.
-- Log design decisions in the project's brief or design record using: **decision / requirement / source URL / reason / validation / date**.
+- 通常テキストのコントラスト比：原則 **4.5:1以上**（WCAG AA。例外あり）
+- キーボード操作時：フォーカス位置を視覚的に識別できる
+- ドラッグによる操作：原則としてドラッグなしでも同じ機能を実行できる
+- 画面幅・表示倍率の変化：情報や機能を失わないようにする（複雑な表などには例外あり）
+
+## 4. 性能・信頼性（4項目）
+
+| No. | 項目 | 推奨される設計方針 | 参照ガイドライン |
+|---|---|---|---|
+| 20 | パフォーマンス | ページ読み込み、操作への応答、表示の安定性を測定する。LCP・INP・CLSなどを指標にする | [Google：Core Web Vitals](https://web.dev/articles/vitals?hl=ja) |
+| 21 | 大量データ対応 | 大量データは一度にすべて描画せず、ページネーション、遅延読み込み、仮想スクロールなどを検討する | [MDN：Lazy loading](https://developer.mozilla.org/en-US/docs/Web/Performance/Guides/Lazy_loading)、[Carbon：Data table](https://www.carbondesignsystem.com/building-blocks/core/components/data-table/guidelines) |
+| 22 | 信頼性・障害復旧 | 通信障害時の再試行、タイムアウト、データ保護、バックアップと復旧手順を設計する | [Microsoft：再試行パターン](https://learn.microsoft.com/ja-jp/azure/architecture/patterns/retry)、[AWS：Reliability Pillar](https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/) |
+| 23 | 同時編集・整合性 | 更新競合を検出し、他ユーザーの変更を意図せず上書きしないようにする。楽観的ロックなどを検討する | [MDN：HTTP条件付きリクエスト](https://developer.mozilla.org/ja/docs/Web/HTTP/Guides/Conditional_requests) |
+
+**Core Web Vitalsの推奨目標値（実利用データの75パーセンタイル）：**
+
+| 指標 | 対象 | 良好とされる目安 |
+|---|---|---|
+| LCP | 読み込み性能 | 2.5秒以下 |
+| INP | 操作への応答性 | 200ミリ秒以下 |
+| CLS | レイアウトの安定性 | 0.1以下 |
+
+※ 業務検索APIやバッチ処理などの応答時間目標は、Core Web Vitalsとは別に定義する必要があります。
+
+## 5. セキュリティ・データ保護（3項目）
+
+| No. | 項目 | 推奨される設計方針 | 参照ガイドライン |
+|---|---|---|---|
+| 24 | 認証・認可 | MFAを検討し、最小権限の原則を適用する。サーバー側で操作やデータへのアクセス権限を確認する | [OWASP：Authentication](https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html)、[OWASP：Authorization](https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html) |
+| 25 | セキュリティ対策 | XSS、インジェクション、アクセス制御の不備などを防ぐ。セキュリティ要件を開発・テストに組み込む | [OWASP Top 10:2025 日本語版](https://top10.owasp.org/2025/ja/)、[OWASP ASVS](https://asvs.owasp.org/) |
+| 26 | データ保護 | 個人データの利用目的、アクセス制御、保存期間、削除・廃棄、暗号化、安全管理措置を定義する | [個人情報保護委員会：ガイドライン（通則編）](https://www.ppc.go.jp/personalinfo/legal/guidelines_tsusoku/) |
+
+**設計上のポイント：** 認証・認可の要件はUI表示の制御だけでは満たせません。API・サーバー側でも権限を検証する必要があります。
+
+## 6. 品質管理・運用・改善（4項目）
+
+| No. | 項目 | 推奨される設計方針 | 参照ガイドライン |
+|---|---|---|---|
+| 27 | テスト・品質保証 | ユーザーが実行する主要操作をE2Eテストで検証する。テストの独立性を保ち、アクセシビリティは人手でも確認する | [Playwright：Best Practices](https://playwright.dev/docs/best-practices)、[W3C：Accessibility Evaluation](https://www.w3.org/WAI/test-evaluate/) |
+| 28 | 監視・障害対応 | エラー率、応答時間、可用性などを監視する。ユーザーへの影響に基づいてアラートを設計する | [Google SRE：Monitoring](https://sre.google/workbook/monitoring/) |
+| 29 | 保守性・拡張性 | コンポーネントを再利用し、機能間の依存を減らす。APIの契約やバージョン管理を明確にする | [Microsoft：アプリケーションの設計原則](https://learn.microsoft.com/ja-jp/azure/architecture/guide/design-principles/) |
+| 30 | 利用分析・改善 | タスク完了率、所要時間、操作エラー、ユーザー満足度などを測定し、改善に反映する | [MeasuringU：Task-Based UX Metrics](https://measuringu.com/task-based-metrics/) |
+
+## 7. ガイドライン策定時の優先順位
+
+| 優先度 | 対象 | 主に参考にする資料 |
+|---|---|---|
+| 最優先 | 操作方法・画面遷移・一貫性 | NN/g、Microsoft、IBM Carbon |
+| 最優先 | アクセシビリティ・キーボード操作 | WCAG 2.2、WAI-ARIA APG |
+| 最優先 | セキュリティ・アクセス制御 | OWASP ASVS、OWASP Top 10 |
+| 高 | テーブル・検索・入力フォーム | IBM Carbon、デジタル庁、GOV.UK |
+| 高 | パフォーマンス・信頼性 | Google web.dev、Microsoft Azure Architecture |
+| 高 | テスト・監視 | Playwright、Google SRE |
+| 中 | 拡張性・保守性・利用分析 | Microsoft Architecture、MeasuringU |
+
+## 8. 独自ガイドラインに落とし込むための推奨フォーマット
+
+| フィールド | 記述例 |
+|---|---|
+| 分類 | UX・操作性 |
+| ガイドライン名 | 複数選択操作 |
+| 原則 | ユーザーが複数項目を効率的に選択できること |
+| 標準仕様 | チェックボックスによる複数選択を提供する。PCではCtrl・Shift操作にも対応することを検討する |
+| 例外・注意点 | タッチ操作では修飾キーに依存しない。選択状態とフォーカスを区別する |
+| 適用範囲 | データテーブル、ファイル一覧、ツリー |
+| 参考資料 | Microsoft Selection Modes、WAI-ARIA Listbox |
+| 確認方法 | マウス、キーボード、タッチ操作で選択・解除できることをテストする |
+
+**推奨：** Webアプリ全体の設計基準を整備する場合は、最初に **No.1〜14とNo.15〜16** の16項目を詳細化し、操作パターン単位で仕様とテスト方法を定義すると効果的です。

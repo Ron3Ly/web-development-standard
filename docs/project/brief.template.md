@@ -12,7 +12,7 @@
 - Required pages:
 - Forms and interactions:
 - Responsive priorities:
-- Accessibility / legal requirements (default target WCAG 2.2 AA; confirm scope):
+- Accessibility / legal requirements (WCAG 2.2 AA is a candidate; confirm target and scope):
 
 ## Technical choices
 - JavaScript or TypeScript:
@@ -31,8 +31,11 @@
 - Brand colors and logo rights:
 - Font and Japanese fallback:
 - Reference UI and specific patterns:
-- Applied design/UX guidelines (Digital Agency, NN/g, Windows, Carbon) and rationale:
-- WCAG 2.2 criteria / APG interaction patterns requiring manual verification:
+- Applicable guideline item numbers (No.1–30 from `docs/design/ui-guidelines.md`) and rationale:
+- Required keyboard/multi-select/table patterns and WCAG/APG checks:
+- Performance / large data / reliability / concurrency needs (No.20–23):
+- Security and data protection requirements (No.24–26):
+- E2E testing / monitoring / maintainability / UX metrics (No.27–30):
 - Icon/illustration choices and license notes:
 - Design system exceptions:
 

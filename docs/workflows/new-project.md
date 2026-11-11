@@ -11,7 +11,7 @@
 3. Ensure the agent **actually has access** to this standards repository. For Codex, copying `AGENTS.md` and relevant standard files into the active repo is the most reliable automatic-discovery method; alternatively explicitly supply/read the external files.
 4. In GPT Work, supply the standards URL plus access to the GitHub content, and ask it to enumerate what it read before making decisions. Do not assume a URL alone makes Work read everything.
 5. Verify Vinext, Cloudflare, database and auth compatibility for the project's pinned dependencies. Record any deviation.
-6. Plan UI with the Digital Agency Design System and selected asset licenses.
+6. Read the [30-item web application development guideline](../design/ui-guidelines.md). Map applicable items No.1–30 to the project brief. Prioritize detailing No.1–14 and No.15–16 for interactive interfaces, then account for performance, reliability, security, QA and operation items. Plan UI with the Digital Agency Design System and selected asset licenses.
 7. Implement, run available checks, preview on target devices, and validate deployed Cloudflare behavior.
 8. Document changes, test results and outstanding concerns.
 
