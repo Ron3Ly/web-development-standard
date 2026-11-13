@@ -1,0 +1,47 @@
+/*
+ * Web Development Standard — example typography tokens (2026-11-13)
+ *
+ * This file DOES NOT fetch or bundle fonts.
+ * Each project must load legally obtained, versioned font resources separately,
+ * following docs/design/typography.md and the pinned Vinext/runtime capabilities.
+ */
+
+:root {
+  --font-ui: "Geist", "Noto Sans JP", "Hiragino Kaku Gothic ProN",
+    "Yu Gothic", "Meiryo", sans-serif;
+  --font-japanese: "Noto Sans JP", "Hiragino Kaku Gothic ProN",
+    "Yu Gothic", "Meiryo", sans-serif;
+  --font-code: "Geist Mono", ui-monospace, "SFMono-Regular",
+    "Cascadia Code", "Segoe UI Mono", Consolas, monospace;
+
+  --text-body-size: 1rem;
+  --text-body-line-height: 1.65;
+}
+
+html {
+  font-family: var(--font-ui);
+  font-size: 100%;
+}
+
+body {
+  font-family: var(--font-ui);
+  font-size: var(--text-body-size);
+  line-height: var(--text-body-line-height);
+}
+
+/* Apply to Japan-first longform text when mixed-script Latin shaping is unwanted. */
+.font-japanese {
+  font-family: var(--font-japanese);
+}
+
+code, pre, kbd, samp {
+  font-family: var(--font-code);
+}
+
+/* Use for numeric data columns if the chosen font supports tabular numerals. */
+.tabular-numbers {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Headings should remain part of a coherent scale defined by the project.
+   Avoid hardcoding decorative fonts unless the project brief calls for them. */

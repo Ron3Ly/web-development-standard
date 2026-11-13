@@ -11,9 +11,13 @@ Also read the [Webアプリケーション開発ガイドライン（6分野・3
 
 [Astryx](https://github.com/meta/astryx) is a candidate React component system (150+ components, theme tokens, templates and agent-oriented CLI). It complements — **does not supersede** — the Digital Agency Design System's principles. It is beta and requires React 19+; do not automatically install it. If the project chooses Astryx, use its documented component APIs, themes and tokens rather than rebuilding existing primitives. See [Astryx integration notes](astryx.md).
 
+## Typography
+
+Use [Typography / Font Standards](typography.md) for default fonts and delivery rules. The **default for new Japanese-language product UI** is Geist Sans (Latin/numerals) with Noto Sans JP (Japanese), while Geist Mono is reserved for code. The font choice is actually applied in the project's styles and loader; listing the family in documentation is insufficient. Select a readability, editorial, enterprise or friendly-brand alternative when the project brief justifies it. See [copyable CSS example](../../examples/typography.css).
+
 ## Visual defaults
 - Readable hierarchy, clear navigation, consistent components and generous but purposeful whitespace.
-- Geist is the preferred Latin font; select a legible Japanese fallback (e.g., system Japanese sans-serif) and test mixed scripts.
+- Geist Sans is preferred for Latin UI text, Noto Sans JP for Japanese glyphs, and Geist Mono for code; use platform Japanese fallback fonts if webfonts are missing. Test mixed-script baselines and widths.
 - Centralize colors, spacing, type scales, border radii and interaction states in project design tokens.
 - Avoid arbitrary one-off styles, excessive decoration, and unexplained gradients.
 - Support mobile/tablet/desktop. Check real content lengths, Japanese line breaking and text zoom.
@@ -35,7 +39,7 @@ Also read the [Webアプリケーション開発ガイドライン（6分野・3
 ## Review
 1. Read the applicable numbered recommendations in [the 30-item guidelines](ui-guidelines.md), especially No.1–16 for the design stage; use No.20–30 for performance, security and release reviews.
 2. Compare pages and component states against the shared visual rules.
-3. Test keyboard-only and zoomed-in layouts.
+3. Test keyboard-only and zoomed-in layouts, including Japanese line breaks, font fallback, glyph coverage and font-loading CLS.
 4. Test motion reduction and dark mode if supported.
 5. Check no third-party icon/image violates the asset license.
 6. Note intentional exceptions in the project brief.

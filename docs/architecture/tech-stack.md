@@ -14,7 +14,7 @@
 | Login | Google sign-in / anonymous | Requirements; auth provider/session strategy unselected |
 | Analytics | Google Analytics 4 | Optional, consent/privacy review needed |
 | Analytics | Cloudflare Web Analytics | Optional |
-| Font | Geist | Add Japanese fallback when relevant |
+| Font | Geist Sans + Noto Sans JP (default) / Geist Mono (code) | See [typography standard](../design/typography.md) for alternative presets, loading, licensing and fallback |
 | Styles | CSS + utility classes | Utility framework **not specified** |
 | UI components (candidate) | [Astryx](https://github.com/meta/astryx) | Optional; React 19+, currently beta. Requires runtime/build/RSC validation |
 | Language | JavaScript or TypeScript | **Undecided**: inspect each repo; choose deliberately |
@@ -25,6 +25,7 @@
 - If Astryx is selected, confirm React 19+, package/peer-dependency compatibility, CSS import order and RSC client boundaries; follow [Astryx guidelines](../design/astryx.md).
 - Do not assume full Next.js compatibility. Confirm RSC, routing, middleware/edge compatibility, caching, image handling and deployment against the currently pinned Vinext version.
 - Check official docs and pin dependency versions in the project lockfile.
+- Configure selected fonts explicitly. For Vinext, inspect the pinned version's `next/font` implementation: it may not match Next.js build-time self-hosting and fallback metrics. Prefer tested WOFF2 assets and CSS `@font-face` when deterministic first-party delivery is required. Validate Cloudflare production requests and font performance. See [typography standard](../design/typography.md).
 - Maintain server/client boundaries, avoid leaking secrets or making privileged API calls from the browser.
 - Prefer existing package scripts and framework conventions over invented commands.
 
@@ -32,6 +33,7 @@
 - [ ] Confirm Vinext features used by this project
 - [ ] Confirm production build, Cloudflare deployment and env bindings
 - [ ] Confirm responsive behavior and keyboard accessibility
+- [ ] Confirm chosen Japanese/Latin font stack, font licenses, loading, fallback, glyphs and layout shift
 - [ ] Confirm storage permissions and migrations if D1/R2 is used
 - [ ] Confirm auth session / anonymous-account migration behavior if auth is used
 - [ ] Confirm analytics consent, privacy notices and event data handling if analytics is used

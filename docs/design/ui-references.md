@@ -8,6 +8,10 @@
 
 The [Webアプリケーション開発ガイドライン（全30項目）](ui-guidelines.md) is the shared working reference for six areas: UX, UI/information architecture, accessibility, performance/reliability, security/data protection, and quality/operations. It retains the original recommendations and official citations from the uploaded source. Prioritize the specific numbered items that apply to the project; do not treat every recommended practice as a mandatory standard.
 
+## Typography reference
+- [Typography / Font Standards](typography.md): selected typefaces by use case, implementation presets, license checks and browser performance. Do not introduce fonts solely to match a visual screenshot.
+- [Digital Agency typography guidance](https://design.digital.go.jp/dads/foundations/typography/): legible Japanese sans-serif typography; Noto Sans JP and Noto Sans Mono in their system.
+
 ## React component system reference (optional)
 - [Meta Astryx](https://github.com/meta/astryx) / [component Storybook](https://astryx.atmeta.com/storybook/): accessible React UI components, tokens, interaction patterns and page templates. Use as a practical implementation candidate, not as a required brand visual. See [Astryx guidelines](astryx.md).
 
