@@ -8,6 +8,13 @@
 
 The [Webアプリケーション開発ガイドライン（全30項目）](ui-guidelines.md) is the shared working reference for six areas: UX, UI/information architecture, accessibility, performance/reliability, security/data protection, and quality/operations. It retains the original recommendations and official citations from the uploaded source. Prioritize the specific numbered items that apply to the project; do not treat every recommended practice as a mandatory standard.
 
+## Navigation and page transitions
+- [Navigation and Page Transitions](page-navigation.md): site map, labels, current location, browser history, progress feedback and motion.
+- [Nielsen Norman Group menu design](https://media.nngroup.com/media/articles/attachments/PDF_Menu-Design-Checklist.pdf): navigation visibility, labels and wayfinding (advisory checklist).
+- [W3C APG Disclosure Navigation](https://www.w3.org/WAI/ARIA/apg/patterns/disclosure/examples/disclosure-navigation/): accessibility patterns for ordinary website navigation; the demonstration is not automatically production-ready.
+- [W3C WCAG 2.2](https://www.w3.org/TR/WCAG22/): testable criteria, including consistent navigation and focus order.
+- [MDN View Transition API](https://developer.mozilla.org/en-US/docs/Web/API/View_Transition_API): optional transition animations, subject to browser support and reduced-motion preferences.
+
 ## Typography reference
 - [Typography / Font Standards](typography.md): selected typefaces by use case, implementation presets, license checks and browser performance. Do not introduce fonts solely to match a visual screenshot.
 - [Digital Agency typography guidance](https://design.digital.go.jp/dads/foundations/typography/): legible Japanese sans-serif typography; Noto Sans JP and Noto Sans Mono in their system.

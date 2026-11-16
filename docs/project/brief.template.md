@@ -8,7 +8,15 @@
 - Content and language:
 
 ## Pages and features
-- Sitemap:
+- Sitemap / route inventory (public, protected, auth, error):
+- Primary navigation / information hierarchy and active-location cues:
+- User journey diagrams (list -> detail -> edit -> back, registration etc.):
+- Route URL / query state contract (filter/sort/page, direct links):
+- Browser history and scroll restoration rules:
+- Route-change focus, page title and assistive technology announcements:
+- Loading/empty/error/not-found/permission-denied navigation states:
+- Leave-with-unsaved-changes policy:
+- Transition animation policy (none by default; reduced motion and feature support):
 - Required pages:
 - Forms and interactions:
 - Responsive priorities:
@@ -25,6 +33,7 @@
 - Google login required? Specific provider:
 - Anonymous access required? Persistence/account linking:
 - GA4 / Cloudflare Web Analytics required? Events and consent:
+- SPA page-view tracking method, virtual page paths, duplicate-measurement prevention:
 - External music providers required? Scopes / quotas / terms:
 
 ## Branding / UI
@@ -48,6 +57,7 @@
 - Target performance and accessibility:
 - Security / privacy requirements:
 - Acceptance criteria:
+- Navigation review: direct URL, refresh, back/forward, keyboard, mobile, scroll/focus, auth return, slow network, reduced motion:
 - Known open questions:
 
 ## Deviations from the shared standard

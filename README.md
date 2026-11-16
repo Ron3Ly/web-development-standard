@@ -28,6 +28,7 @@ GPT Work・Codex・GitHubで再利用する、Webサイト設計・実装の共�
 
 - **主な設計指針**：[デジタル庁デザインシステム](https://design.digital.go.jp/dads/)（日本語UI、情報設計、フォーム、コンポーネント）
 - **推奨フォント・実装方針**：[Typography / Font Standards](docs/design/typography.md) — 日本語・欧文の使い分け、用途別フォント、ライセンス、WOFF2、Vinextでの配信・性能の検証を規定。コピー用の[CSSトークン例](examples/typography.css)も用意。
+- **ページ遷移とナビゲーション**：[UX・ページ遷移設計](docs/design/page-navigation.md) ＋ [Vinext実装標準](docs/architecture/routing-navigation.md) ＋ [レビュー手順](docs/workflows/navigation-review.md)。情報設計から戻る操作、フォーカス、View Transitions、計測まで一貫して設計します。
 - **Webアプリ開発ガイドライン**：[全30項目（6分野）](docs/design/ui-guidelines.md) — UX・操作性／UI・情報設計／アクセシビリティ・利用環境／性能・信頼性／セキュリティ・データ保護／品質管理・運用・改善。アップロードされた原文を採用し、規格上の必須事項と実務上の推奨を区別します。
 - **UIコンポーネント基盤の候補**：[Astryx（Meta）](https://github.com/meta/astryx) — 150以上のReactコンポーネント、テーマ、CLI。デジタル庁の設計指針と併用可能。導入は任意で、Vinext / RSC / Cloudflareとの実動作検証が必要。詳しくは [Astryx利用指針](docs/design/astryx.md)。
 - **UIアセット**：[Lucide Animated](https://lucide-animated.com/) / [ICOOON MONO](https://icooon-mono.com/) / [デジタル庁イラストレーション・アイコン](https://www.digital.go.jp/policies/servicedesign/designsystem/Illustration_Icons) / [freeicon.dev（Motive）](https://freeicon.dev/)
@@ -44,6 +45,9 @@ GPT Work・Codex・GitHubで再利用する、Webサイト設計・実装の共�
 | [docs/architecture/external-integrations.md](docs/architecture/external-integrations.md) | 外部音楽サービス/API連携 |
 | [docs/design/design-system.md](docs/design/design-system.md) | UI/UX・アクセシビリティ・スタイル |
 | [docs/design/typography.md](docs/design/typography.md) | 日本語・欧文フォントの推奨候補、採用プリセット、配信・ライセンス・レビュー基準 |
+| [docs/design/page-navigation.md](docs/design/page-navigation.md) | サイト構造、ナビゲーション、遷移体験、フォーカス・戻る操作のUX設計 |
+| [docs/architecture/routing-navigation.md](docs/architecture/routing-navigation.md) | Vinext / RSC / Cloudflareのルーティング実装・SEO・セキュリティ・計測 |
+| [docs/workflows/navigation-review.md](docs/workflows/navigation-review.md) | 遷移テストマトリクス、レビュー手順・受け入れ条件 |
 | [examples/typography.css](examples/typography.css) | 新規Webサイトに移植できるフォントスタック・タイポグラフィCSSの例 |
 | [docs/design/ui-guidelines.md](docs/design/ui-guidelines.md) | Webアプリケーション開発ガイドライン（6分野・全30項目、推奨基準と出典） |
 | [docs/design/astryx.md](docs/design/astryx.md) | Astryxコンポーネント・テーマ・CLIの導入判断 |
@@ -81,4 +85,4 @@ GPT Work・Codex・GitHubで再利用する、Webサイト設計・実装の共�
 
 このリポジトリは文章・規約を管理します。新規依存関係や大きな設計変更は、用途・互換性・メリット・移行コストを記録してから反映してください。
 
-最終整理：2026-11-13 / 現在版 1.5
+最終整理：2026-11-16 / 現在版 1.6

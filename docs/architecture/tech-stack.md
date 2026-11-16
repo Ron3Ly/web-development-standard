@@ -7,6 +7,7 @@
 | Frontend | React | Standard UI library |
 | Framework | Vinext | Preferred Next.js-compatible framework; verify feature compatibility |
 | Rendering | React Server Components | Prefer server components where supported; use client components for browser interaction |
+| Navigation / Routing | Vinext App Router + native links / `next/link`, where supported | See [Routing & Navigation](routing-navigation.md) and [Page Navigation UX](../design/page-navigation.md) |
 | Build | Vite / Rolldown | Use the versions/toolchain supported by the actual Vinext release |
 | Runtime / hosting | Cloudflare Workers | Confirm Workers APIs and deployment settings |
 | Relational database | Cloudflare D1 | Use when needed |
@@ -23,7 +24,7 @@
 ## Decision rules
 - Do **not** silently replace Vinext with Next.js, introduce Tailwind/shadcn, Astryx, a database, auth framework or external service without need.
 - If Astryx is selected, confirm React 19+, package/peer-dependency compatibility, CSS import order and RSC client boundaries; follow [Astryx guidelines](../design/astryx.md).
-- Do not assume full Next.js compatibility. Confirm RSC, routing, middleware/edge compatibility, caching, image handling and deployment against the currently pinned Vinext version.
+- Do not assume full Next.js compatibility. Confirm RSC, routing, middleware/edge compatibility, caching, image handling and deployment against the currently pinned Vinext version. Verify route links, prefetch, scroll restoration, Suspense/loading and transition behavior following [Routing & Navigation](routing-navigation.md).
 - Check official docs and pin dependency versions in the project lockfile.
 - Configure selected fonts explicitly. For Vinext, inspect the pinned version's `next/font` implementation: it may not match Next.js build-time self-hosting and fallback metrics. Prefer tested WOFF2 assets and CSS `@font-face` when deterministic first-party delivery is required. Validate Cloudflare production requests and font performance. See [typography standard](../design/typography.md).
 - Maintain server/client boundaries, avoid leaking secrets or making privileged API calls from the browser.

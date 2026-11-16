@@ -11,6 +11,7 @@ These are **capabilities**, not a mandated auth provider or SDK.
 - Choose the specific auth library/provider compatible with Vinext and Cloudflare Workers.
 - Define whether anonymous users are authenticated with persistent server-side identities or are simply unauthenticated guests.
 - Document session storage, expiration, cookie attributes, CSRF protection and OAuth callback URLs.
+- For login return paths, accept only validated same-origin local paths or server-side approved destination IDs; never redirect to unvalidated user-supplied URLs. Keep the originally requested destination after successful auth where authorized; avoid redirect loops and exposing credentials in query parameters. See [Routing & Navigation](routing-navigation.md).
 - Use least-privilege OAuth scopes; do not store third-party secrets in D1 plaintext.
 - Define how an anonymous account is linked/upgraded to Google sign-in without losing data.
 - Authorize every protected operation on the server, including access to D1 rows and R2 objects.

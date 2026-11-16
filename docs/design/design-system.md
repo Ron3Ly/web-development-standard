@@ -11,6 +11,10 @@ Also read the [Webアプリケーション開発ガイドライン（6分野・3
 
 [Astryx](https://github.com/meta/astryx) is a candidate React component system (150+ components, theme tokens, templates and agent-oriented CLI). It complements — **does not supersede** — the Digital Agency Design System's principles. It is beta and requires React 19+; do not automatically install it. If the project chooses Astryx, use its documented component APIs, themes and tokens rather than rebuilding existing primitives. See [Astryx integration notes](astryx.md).
 
+## Navigation and page transitions
+
+Before implementing multi-page flows, read [Page Navigation UX & Transition Design](page-navigation.md), then the [Vinext technical rules](../architecture/routing-navigation.md). Make navigation location and destinations predictable, preserve browser back/forward semantics, manage focus/scroll deliberately, and treat animation as progressive enhancement. Verify against the [navigation review checklist](../workflows/navigation-review.md).
+
 ## Typography
 
 Use [Typography / Font Standards](typography.md) for default fonts and delivery rules. The **default for new Japanese-language product UI** is Geist Sans (Latin/numerals) with Noto Sans JP (Japanese), while Geist Mono is reserved for code. The font choice is actually applied in the project's styles and loader; listing the family in documentation is insufficient. Select a readability, editorial, enterprise or friendly-brand alternative when the project brief justifies it. See [copyable CSS example](../../examples/typography.css).
@@ -40,6 +44,6 @@ Use [Typography / Font Standards](typography.md) for default fonts and delivery 
 1. Read the applicable numbered recommendations in [the 30-item guidelines](ui-guidelines.md), especially No.1–16 for the design stage; use No.20–30 for performance, security and release reviews.
 2. Compare pages and component states against the shared visual rules.
 3. Test keyboard-only and zoomed-in layouts, including Japanese line breaks, font fallback, glyph coverage and font-loading CLS.
-4. Test motion reduction and dark mode if supported.
+4. Test motion reduction and dark mode if supported. Confirm navigation menus, back/forward, current-page labels, URL state and route-change focus.
 5. Check no third-party icon/image violates the asset license.
 6. Note intentional exceptions in the project brief.

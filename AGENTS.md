@@ -6,9 +6,10 @@ This repository is a **shared standards reference**, not an executable applicati
 Before planning, designing, or implementing a website:
 1. Read `docs/architecture/tech-stack.md`.
 2. Read `docs/architecture/cloudflare.md` and `docs/architecture/authentication.md` when relevant.
-3. Read `docs/design/ui-guidelines.md`, `docs/design/design-system.md`, **`docs/design/typography.md`**, `docs/design/ui-references.md`, and `docs/design/ui-assets.md`. Read `docs/design/astryx.md` when evaluating or using UI components.
-4. Read `docs/architecture/external-integrations.md` if using music APIs.
-5. Read the active project's brief. Use `docs/project/brief.template.md` if none exists.
+3. Read `docs/design/ui-guidelines.md`, `docs/design/design-system.md`, **`docs/design/typography.md`**, **`docs/design/page-navigation.md`**, `docs/design/ui-references.md`, and `docs/design/ui-assets.md`. Read `docs/design/astryx.md` when evaluating or using UI components.
+4. Read **`docs/architecture/routing-navigation.md`** whenever planning or implementing routes, links, transitions, auth redirects, navigation state, or navigation analytics. Read `docs/workflows/navigation-review.md` for verification.
+5. Read `docs/architecture/external-integrations.md` if using music APIs.
+6. Read the active project's brief. Use `docs/project/brief.template.md` if none exists.
 
 ## Technical defaults
 - React, Vinext, RSC where supported, Vite/Rolldown, Cloudflare Workers.
@@ -28,6 +29,9 @@ Before planning, designing, or implementing a website:
 - Follow the source document's prioritization: first detail No.1–14 and No.15–16 for interactive web applications; also address applicable performance, security and QA practices before delivery. Use the Digital Agency Design System for relevant Japanese-language UI patterns.
 - Consider Astryx as a component implementation resource and design-system reference, not a replacement for the Digital Agency design principles. If selected, consult the pinned project's Astryx CLI/component documentation; do not invent component APIs.
 - Prefer existing components and tokens, consistent responsive layout, meaningful interaction and restrained motion.
+- **Page navigation:** start with a sitemap/route map and primary user journeys; use real links for navigation and buttons for actions. Preserve deep links, browser history, accessible current-page indicators, scroll and focus expectations. See `docs/design/page-navigation.md`.
+- **Routing:** use version-verified Vinext App Router / `next/link` / `next/navigation`; never invent router APIs or assume Next.js behavior is identical. Prefer functional navigation without transitions; progressive motion only if useful and reduced-motion-safe. See `docs/architecture/routing-navigation.md`.
+- **Security/analytics:** validate internal auth `returnTo` targets and server-side authorization; ensure meaningful loading/error states, crawlable public links, and no double-counted GA4/Cloudflare SPA page views.
 - Limit loaded font families and weights; use Japanese-specific glyph/subset optimization, WOFF2, sensible `font-display`, system fallback and font license notices. On Vinext, do not assume Next.js `next/font` self-hosting/subsetting; validate the pinned version and Cloudflare production build.
 - Approved candidate asset sources: Lucide Animated, ICOOON MONO, Digital Agency illustration/icon assets, freeicon.dev.
 - Check **specific asset licenses** before copying or redistributing. Respect reduced-motion preferences.
@@ -39,7 +43,7 @@ Before planning, designing, or implementing a website:
 3. Document assumptions and deviations before installing new frameworks/libraries.
 4. Implement minimal, reusable, accessible code; protect secrets server-side.
 5. Where available, run the project's lint, type check, tests and production build.
-6. Review the applicable 30-item guideline checks, including responsive behavior, selection and table workflows, WCAG/APG interactions, Core Web Vitals, server-side authorization, privacy, E2E tests and monitoring as relevant. Validate actual font loading, Japanese glyph coverage, 200% zoom, fallback and CLS; distinguish recommendations from mandatory requirements and report unverified checks.
+6. Review the applicable 30-item guideline checks, including responsive behavior, selection and table workflows, WCAG/APG interactions, Core Web Vitals, server-side authorization, privacy, E2E tests and monitoring as relevant. Validate actual font loading, Japanese glyph coverage, 200% zoom, fallback and CLS. Verify navigation using `docs/workflows/navigation-review.md`: direct URLs, back/forward, filters, auth return, keyboard/screen reader focus, reduced motion, slow network, 404/error and page-view analytics. Distinguish recommendations from mandatory requirements and report unverified checks.
 7. Report changed files, validation, known limitations and deviations.
 
 ## Rules for other repositories
