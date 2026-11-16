@@ -15,6 +15,7 @@
 | Login | Google sign-in / anonymous | Requirements; auth provider/session strategy unselected |
 | Analytics | Google Analytics 4 | Optional, consent/privacy review needed |
 | Analytics | Cloudflare Web Analytics | Optional |
+| Privacy documentation | [Privacy policy standards](../legal/privacy-policy-standard.md) | Prepare data inventory, owner-approved disclosures and release checklist before publishing |
 | Font | Geist Sans + Noto Sans JP (default) / Geist Mono (code) | See [typography standard](../design/typography.md) for alternative presets, loading, licensing and fallback |
 | Styles | CSS + utility classes | Utility framework **not specified** |
 | UI components (candidate) | [Astryx](https://github.com/meta/astryx) | Optional; React 19+, currently beta. Requires runtime/build/RSC validation |
@@ -28,6 +29,7 @@
 - Check official docs and pin dependency versions in the project lockfile.
 - Configure selected fonts explicitly. For Vinext, inspect the pinned version's `next/font` implementation: it may not match Next.js build-time self-hosting and fallback metrics. Prefer tested WOFF2 assets and CSS `@font-face` when deterministic first-party delivery is required. Validate Cloudflare production requests and font performance. See [typography standard](../design/typography.md).
 - Maintain server/client boundaries, avoid leaking secrets or making privileged API calls from the browser.
+- For authentication, analytics, D1/R2 or external music APIs, inventory data types, third-party scripts, retention, data subject requests and transborder processing. Cross-check the live behavior with the [privacy standard](../legal/privacy-policy-standard.md) before release.
 - Prefer existing package scripts and framework conventions over invented commands.
 
 ## Validation checklist

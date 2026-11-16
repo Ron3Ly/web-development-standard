@@ -8,14 +8,15 @@ Before planning, designing, or implementing a website:
 2. Read `docs/architecture/cloudflare.md` and `docs/architecture/authentication.md` when relevant.
 3. Read `docs/design/ui-guidelines.md`, `docs/design/design-system.md`, **`docs/design/typography.md`**, **`docs/design/page-navigation.md`**, `docs/design/ui-references.md`, and `docs/design/ui-assets.md`. Read `docs/design/astryx.md` when evaluating or using UI components.
 4. Read **`docs/architecture/routing-navigation.md`** whenever planning or implementing routes, links, transitions, auth redirects, navigation state, or navigation analytics. Read `docs/workflows/navigation-review.md` for verification.
-5. Read `docs/architecture/external-integrations.md` if using music APIs.
-6. Read the active project's brief. Use `docs/project/brief.template.md` if none exists.
+5. **Privacy / legal:** Read `docs/legal/privacy-policy-standard.md`, `docs/legal/data-inventory.template.md`, and `docs/workflows/privacy-review.md` when building/altering account flows, cookies, analytics, external APIs, data storage, data requests, or public-facing privacy notices. Use `docs/legal/privacy-policy.template.md` only as a draft, never a finished compliance statement.
+6. Read `docs/architecture/external-integrations.md` if using music APIs.
+7. Read the active project's brief. Use `docs/project/brief.template.md` if none exists.
 
 ## Technical defaults
 - React, Vinext, RSC where supported, Vite/Rolldown, Cloudflare Workers.
 - D1 for relational storage, R2 for objects, **only when required**.
 - Google login and anonymous/guest authentication are possible requirements, **not a preselected auth library**.
-- GA4 and Cloudflare Web Analytics when specified and privacy requirements permit.
+- GA4 and Cloudflare Web Analytics when specified and privacy requirements permit. Their data collection and external transmissions must be inventoried before publication.
 - **Typography default for new Japan-facing websites:** use Geist Sans for Latin/UI numerals and Noto Sans JP for Japanese text, with OS Japanese sans-serif fallbacks; use Geist Mono for code/monospaced data only. Actually configure the fonts in the project, not merely mention them. Read `docs/design/typography.md` and use `examples/typography.css` as the starting token/stack reference. Existing projects and project briefs may override the default.
 - **Alternate typography presets by context:** Noto Sans JP or BIZ UDPGothic for Japanese readability-focused content; Inter for Latin-heavy products; IBM Plex Sans JP for dense enterprise UI; Noto Serif JP for editorial titles; Zen Maru Gothic for friendly-brand titles. Do not load all candidates.
 - CSS with utility classes. **Do not assume Tailwind or shadcn/ui is mandatory**.
@@ -32,6 +33,8 @@ Before planning, designing, or implementing a website:
 - **Page navigation:** start with a sitemap/route map and primary user journeys; use real links for navigation and buttons for actions. Preserve deep links, browser history, accessible current-page indicators, scroll and focus expectations. See `docs/design/page-navigation.md`.
 - **Routing:** use version-verified Vinext App Router / `next/link` / `next/navigation`; never invent router APIs or assume Next.js behavior is identical. Prefer functional navigation without transitions; progressive motion only if useful and reduced-motion-safe. See `docs/architecture/routing-navigation.md`.
 - **Security/analytics:** validate internal auth `returnTo` targets and server-side authorization; ensure meaningful loading/error states, crawlable public links, and no double-counted GA4/Cloudflare SPA page views.
+- **Privacy-by-design / public disclosures:** inventory actual personal data, identifiers, cookies, logs, Cloudflare D1/R2, Google sign-in, GA4 and optional music API flows before writing policy text. Never invent operator identity, contact details, purposes, recipients, storage regions, retention, consent mechanics, or legal compliance. Map each statement to verified evidence. Use the legal templates and review workflow; a human owner (and legal counsel when appropriate) must approve public wording.
+- **Current law matters:** Japanese APPI disclosure rules, applicability of the Telecommunications Business Act external-transmission obligations, overseas recipients, EU/other region requirements, and the phased 2026 APPI amendments require a release-date check. Do not assert that every cookie universally requires consent in Japan or that a privacy policy by that title is universally mandated.
 - Limit loaded font families and weights; use Japanese-specific glyph/subset optimization, WOFF2, sensible `font-display`, system fallback and font license notices. On Vinext, do not assume Next.js `next/font` self-hosting/subsetting; validate the pinned version and Cloudflare production build.
 - Approved candidate asset sources: Lucide Animated, ICOOON MONO, Digital Agency illustration/icon assets, freeicon.dev.
 - Check **specific asset licenses** before copying or redistributing. Respect reduced-motion preferences.
@@ -43,7 +46,7 @@ Before planning, designing, or implementing a website:
 3. Document assumptions and deviations before installing new frameworks/libraries.
 4. Implement minimal, reusable, accessible code; protect secrets server-side.
 5. Where available, run the project's lint, type check, tests and production build.
-6. Review the applicable 30-item guideline checks, including responsive behavior, selection and table workflows, WCAG/APG interactions, Core Web Vitals, server-side authorization, privacy, E2E tests and monitoring as relevant. Validate actual font loading, Japanese glyph coverage, 200% zoom, fallback and CLS. Verify navigation using `docs/workflows/navigation-review.md`: direct URLs, back/forward, filters, auth return, keyboard/screen reader focus, reduced motion, slow network, 404/error and page-view analytics. Distinguish recommendations from mandatory requirements and report unverified checks.
+6. Review the applicable 30-item guideline checks, including responsive behavior, selection and table workflows, WCAG/APG interactions, Core Web Vitals, server-side authorization, privacy, E2E tests and monitoring as relevant. Validate actual font loading, Japanese glyph coverage, 200% zoom, fallback and CLS. Verify navigation using `docs/workflows/navigation-review.md`: direct URLs, back/forward, filters, auth return, keyboard/screen reader focus, reduced motion, slow network, 404/error and page-view analytics. Run the relevant PR-01–PR-20 privacy checks in `docs/workflows/privacy-review.md` and report open items; do not describe an unreviewed template as a published, legally verified policy. Distinguish recommendations from mandatory requirements and report unverified checks.
 7. Report changed files, validation, known limitations and deviations.
 
 ## Rules for other repositories

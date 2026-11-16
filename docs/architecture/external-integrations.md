@@ -11,6 +11,11 @@ All items are **optional**. Introduce only when a product feature requires them.
 | MusicBrainz | Music metadata and identifiers | Rate limits, licensing, attribution and stable identifiers |
 | Deezer | Music catalog/metadata | Availability, access requirements and usage terms |
 
+## Privacy and policy integration
+- Before enabling a provider, document exactly which user/account data, identifiers, OAuth scopes and requests are transmitted to Spotify, Apple Music, YouTube, setlist.fm, MusicBrainz or Deezer. Metadata-only public lookups and user account connections have different disclosure needs.
+- List embedded players/videos separately because opening them can produce browser-to-provider requests, cookie storage or other external transmissions.
+- Check each provider's current privacy and developer policies; include provider-specific disclosure and user revocation/deletion behavior in the [privacy standard](../legal/privacy-policy-standard.md) and [data inventory](../legal/data-inventory.template.md).
+
 ## Shared implementation rules
 1. Prefer official APIs; confirm current availability, pricing, permissions and terms at implementation time.
 2. Store API credentials in server-side secrets. Never embed restricted tokens in browser code.

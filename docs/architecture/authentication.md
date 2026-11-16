@@ -17,6 +17,8 @@ These are **capabilities**, not a mandated auth provider or SDK.
 - Authorize every protected operation on the server, including access to D1 rows and R2 objects.
 - Prevent abuse with rate limits, anti-automation controls and reasonable anonymous-user quotas.
 - Specify account deletion, data retention and privacy handling.
+- Document actual Google OAuth scopes (even if only sign-in), fields stored, account-linking behavior, token handling and revocation/deletion. Google API Services requires clear privacy disclosures; if an app undergoes OAuth verification, confirm a public privacy policy page on the app's domain and accurate consent-screen links. See [privacy-policy standard](../legal/privacy-policy-standard.md).
+- Confirm the guest/anonymous identifier lifecycle and which data, if any, can be linked to a later Google account. Do not claim that anonymous access necessarily means the user cannot be identified.
 
 ## Open decisions
 - Provider / session library: **not yet selected**.

@@ -52,10 +52,26 @@
 - Icon/illustration choices and license notes:
 - Design system exceptions:
 
+## Privacy / personal data / policy publication
+- Controller/operator legal name, physical business address, corporate representative and privacy contact (verified):
+- Market / audience / applicable laws (Japan APPI, telecom external-transmission scope, EU/other when relevant):
+- 2026 APPI amendment implementation-date / PPC guideline review (as of launch):
+- Data inventory location (copy `docs/legal/data-inventory.template.md` and complete):
+- Collected categories: Google profile, anonymous IDs, cookies, logs, D1/R2 objects, API integrations, user-generated content:
+- Each data category's purposes, collection source, retention/deletion, security safeguards and request-handling procedure:
+- GA4 / Cloudflare Web Analytics real scripts, external sends, required notices, consent choices and evidence:
+- Google OAuth scopes and public privacy policy URL on the same domain (if applicable):
+- Vendors / outsourcing / third-party sharing / overseas handling and documented assessments:
+- Data subject rights, user deletion, opt-out and support contact:
+- Actual public policy URL (example `/privacy`) and last updated date:
+- Reviewer/approver and outstanding [NEEDS VERIFICATION] items:
+- Privacy review checklist (PR-01–PR-20 in `docs/workflows/privacy-review.md`):
+
 ## Delivery / testing
 - Environments / deployment:
 - Target performance and accessibility:
 - Security / privacy requirements:
+- Privacy policy owner/legal review and provider terms checklist:
 - Acceptance criteria:
 - Navigation review: direct URL, refresh, back/forward, keyboard, mobile, scroll/focus, auth return, slow network, reduced motion:
 - Known open questions:

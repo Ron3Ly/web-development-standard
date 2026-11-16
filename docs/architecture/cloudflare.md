@@ -15,6 +15,8 @@
 6. Define caching and retention policies, especially for third-party API data and any personally identifiable information.
 7. Keep local, preview and production environment behavior distinct.
 8. Validate the actual deployed Workers runtime, not only Vite's local development server.
+9. Inventory and document which D1 tables, R2 buckets/objects, application logs, backups, access logs and analytics flows may contain personal data or identifiers. Define retention and deletion behavior, processors, applicable region/cross-border handling, and verify what is factually true for the chosen Cloudflare configuration. See [privacy data inventory](../legal/data-inventory.template.md).
+10. Do not treat Cloudflare Web Analytics' privacy-first claims as proof that every external-transmission or local disclosure obligation is inapplicable. Check the actual beacon, other tags, and the service scope.
 
 ## Required project decisions
 - Worker deployment method and config
