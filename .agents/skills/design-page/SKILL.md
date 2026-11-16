@@ -14,3 +14,7 @@ description: Plan a new page using this repository's design standards and asset 
 8. Produce a concise design specification suitable for implementation, including a navigation/transition matrix and loading/error/unsaved-data states. Optional animation is off by default and must support reduced motion. Provide discoverable, accessible privacy-policy links at appropriate points in the user journey and never use a consent interface that assumes consent without a meaningful user action when consent is legally required.
 
 Do not copy protected visual assets or adopt an unrelated technology stack.
+
+## Security during design
+
+Before planning authenticated or data-backed pages, read `docs/security/security-standard.md` and identify route/role/data boundaries (SEC-01–SEC-12). Capture the threat-model assumptions, privacy requirements and high-risk user journeys in the project brief. Do not treat hiding controls in the UI as authorization.

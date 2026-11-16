@@ -15,8 +15,9 @@
 7. Define site map, route inventory, navigation hierarchy, browser history, scroll/focus policies, auth redirects and loading/error states using [Page Navigation UX](../design/page-navigation.md) and [Routing & Navigation](../architecture/routing-navigation.md). Review with [Navigation Review](navigation-review.md).
 8. Read the [30-item web application development guideline](../design/ui-guidelines.md). Map applicable items No.1–30 to the project brief. Prioritize detailing No.1–14 and No.15–16 for interactive interfaces, then account for performance, reliability, security, QA and operation items. Plan UI with the Digital Agency Design System and selected asset licenses.
 9. Create and review the project-specific data inventory and privacy disclosures using [Privacy Policy Standard](../legal/privacy-policy-standard.md), [Privacy Policy Template](../legal/privacy-policy.template.md) and [Privacy Review](privacy-review.md). Do not publish unverified placeholder text. Review Japanese law/2026 amendments and provider terms at release time.
-10. Implement, run available checks, preview on target devices, and validate deployed Cloudflare behavior including font requests, fallback and CLS. Exercise the navigation E2E matrix and SPA page-view measurement. Check privacy notice accessibility, cookie/external transmission behavior and Google OAuth policy URL.
-11. Document changes, test results and outstanding concerns.
+10. Select an ASVS 5.0.0 target and write a threat model using [Security Standard](../security/security-standard.md) and [Threat Model Template](../security/threat-model.template.md); inspect the RSC/Vinext dependency advisory status, Cloudflare hardening and auth/data boundaries.
+11. Implement, run available checks, preview on target devices, and validate deployed Cloudflare behavior including font requests, fallback and CLS. Exercise the navigation E2E matrix and SPA page-view measurement. Check privacy notice accessibility, cookie/external transmission behavior and Google OAuth policy URL. Run [Security Review](security-review.md) on the app in a non-destructive authorized test environment; record evidence and approval of risks.
+12. Document changes, test results and outstanding concerns.
 
 ## Reusable prompt
 
@@ -27,6 +28,7 @@
 フォントは原則 Geist Sans + Noto Sans JP（コード用 Geist Mono）を採用し、docs/design/typography.md に従って配信・フォールバックを実装してください。案件に適した代替案があれば理由を示してください。
 ページ遷移設計は docs/design/page-navigation.md と docs/architecture/routing-navigation.md に従い、サイトマップ、戻る操作、スクロール・フォーカス、読込中・エラー、必要に応じた遷移アニメーションを設計してください。docs/workflows/navigation-review.md に基づく確認結果を示してください。
 プライバシーポリシーは docs/legal/privacy-policy-standard.md に従い、先にデータ取扱台帳を完成させ、実態に合う文案を作成してください。確認できない事項は事実を創作せず未確認と明記し、公開には運営者の承認を必要としてください。
+セキュリティ基準は docs/security/security-standard.md のSEC-01〜SEC-36、Cloudflare対策は docs/security/cloudflare-hardening.md、チェックは docs/workflows/security-review.md に従ってください。脅威モデル・認証/認可・依存関係・修正済みRSCバージョン・リリースの判定と未確認項目を明示してください。
 Vinext/Cloudflareの実際の対応状況と外部素材/APIの利用条件を確認してください。
 最初に実装計画、最後にテスト結果・例外・未確認事項を報告してください。
 ```

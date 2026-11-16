@@ -12,3 +12,7 @@ description: Review implemented pages for design consistency, responsiveness, us
 6. Verify navigation states with actual routes: direct loads/refresh, browser back/forward, deep links and query persistence, keyboard focus, aria-current, titles/landmarks, history scroll restoration, auth loops, not-found/forbidden states, reduced motion, links/SEO and page-view analytics. Run the matrix in `docs/workflows/navigation-review.md`.
 7. Classify findings by severity; provide file locations and actionable fixes.
 8. Recheck fixes. Record applicable item numbers, evidence and not-tested items; distinguish automated findings from manual keyboard/screen-reader checks. Evaluate font-related layout shift, font request failures, unused fonts/weights and license notices. For applicable sites, check data inventory versus actual scripts/API calls and policy text, policy page access, Google OAuth link and external-transmission notice; report unverified items. Do not assert conformance without evidence.
+
+## Security and operational review
+
+For user data, auth, RSC, APIs or deployed Cloudflare applications, read `docs/security/security-standard.md` and `docs/workflows/security-review.md`. Check evidence for authz IDOR/BOLA, CSRF, XSS, vulnerable RSC dependencies, secrets, storage exposure and CI/release configuration. Request non-destructive security tests on authorized staging only. Report severity and risk owner; never claim ASVS certification on the basis of a checklist.

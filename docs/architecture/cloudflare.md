@@ -31,3 +31,7 @@
 - https://developers.cloudflare.com/d1/
 - https://developers.cloudflare.com/r2/
 - https://developers.cloudflare.com/web-analytics/
+
+## Security hardening
+
+For operational measures, read [Cloudflare Hardening](../security/cloudflare-hardening.md) and [SEC-25–SEC-29](../security/security-standard.md). Workers secrets are not ordinary Wrangler `vars`; do not commit `.dev.vars`/`.env`. Check D1 query bindings and migration permissions, R2 public-domain/`r2.dev` exposure and short-lived presigned bearer URLs. Review WAF and rate limits alongside application-level identity-aware controls; Cloudflare WAF is not a substitute for server-side authorization or patching vulnerable RSC dependencies.

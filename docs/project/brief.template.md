@@ -52,6 +52,22 @@
 - Icon/illustration choices and license notes:
 - Design system exceptions:
 
+## Security requirements and risk acceptance
+
+- Security risk tier and OWASP ASVS 5.0.0 target level (L1 / L2 / L3, rationale):
+- Security owner, incident contact, release approver and documented exceptions:
+- Threat model location (copy `docs/security/threat-model.template.md`):
+- Assets, user roles/tenants, trust boundaries, auth/session model and attack surface:
+- Authentication (Google/guest) PKCE/state/nonce, cookies, CSRF, account linking:
+- Authorization rules per endpoint/server action/D1 row/R2 object and negative cross-user tests:
+- Input, output encoding, SQL parameterization, SSRF, upload/storage limits:
+- Public/private cache, CDN, CSP/headers/CORS and third-party script requirements:
+- Cloudflare secrets/bindings/environment isolation/WAF/rate-limit requirements:
+- Verified React/RSC/Vinext and provider dependency versions; security advisories:
+- CI permissions, secret scanning, SAST/SCA, review branch protections, deploy approval:
+- Logs/alerts, backup/restore/rollback, incident and breach response process:
+- Security review status (SEC-01–SEC-36 and `docs/workflows/security-review.md`):
+
 ## Privacy / personal data / policy publication
 - Controller/operator legal name, physical business address, corporate representative and privacy contact (verified):
 - Market / audience / applicable laws (Japan APPI, telecom external-transmission scope, EU/other when relevant):
@@ -71,6 +87,7 @@
 - Environments / deployment:
 - Target performance and accessibility:
 - Security / privacy requirements:
+- Security verification evidence / exceptions / risk acceptance and release sign-off:
 - Privacy policy owner/legal review and provider terms checklist:
 - Acceptance criteria:
 - Navigation review: direct URL, refresh, back/forward, keyboard, mobile, scroll/focus, auth return, slow network, reduced motion:
