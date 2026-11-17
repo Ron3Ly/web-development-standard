@@ -17,6 +17,7 @@
 | Analytics | Cloudflare Web Analytics | Optional |
 | Privacy documentation | [Privacy policy standards](../legal/privacy-policy-standard.md) | Prepare data inventory, owner-approved disclosures and release checklist before publishing |
 | Security baseline | [SEC-01–SEC-36](../security/security-standard.md) | ASVS 5.0.0 based risk-selected verification, threat model, implementation and release review |
+| Quality baseline | [Q-01–Q-36](../quality/quality-standard.md) | User-flow E2E, CWV field/lab, WCAG, browser, content, operational quality |
 | Font | Geist Sans + Noto Sans JP (default) / Geist Mono (code) | See [typography standard](../design/typography.md) for alternative presets, loading, licensing and fallback |
 | Styles | CSS + utility classes | Utility framework **not specified** |
 | UI components (candidate) | [Astryx](https://github.com/meta/astryx) | Optional; React 19+, currently beta. Requires runtime/build/RSC validation |
@@ -45,3 +46,6 @@
 ## Security verification
 
 Use [Web Security Standard](../security/security-standard.md) and the [release checklist](../workflows/security-review.md). Before deploying Vinext/RSC, check official React, Vinext and RSC plugin advisories and lockfile-resolved versions, not only package.json. Verify the Cloudflare release in a production-equivalent environment. This standards repository does not host a runnable application or claim to have passed those tests.
+## Application quality verification
+
+Before release, apply [Quality Standard](../quality/quality-standard.md) and [Quality Review](../workflows/quality-review.md). Verify actual Vinext/RSC rendering/streaming/hydration on Workers previews, not only the development server. A successful build is not an end-user quality measurement. Use per-project budgets and test matrices.

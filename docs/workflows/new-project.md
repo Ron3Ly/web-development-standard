@@ -19,6 +19,10 @@
 11. Implement, run available checks, preview on target devices, and validate deployed Cloudflare behavior including font requests, fallback and CLS. Exercise the navigation E2E matrix and SPA page-view measurement. Check privacy notice accessibility, cookie/external transmission behavior and Google OAuth policy URL. Run [Security Review](security-review.md) on the app in a non-destructive authorized test environment; record evidence and approval of risks.
 12. Document changes, test results and outstanding concerns.
 
+## Additional quality acceptance flow
+
+After completing the initial project brief and before implementation, define the target pages, user journeys, representative browsers and accessibility scope using [Web Quality Standard](../quality/quality-standard.md) and [Project Targets](../quality/quality-targets.template.md). During implementation, follow [Measurement Playbook](../quality/measurement-playbook.md). Before release, complete [Quality Review](quality-review.md) alongside security, privacy and navigation gates. Record field vs lab metrics separately and never mark untested work Pass. Set Cloudflare SLO/monitoring based on [Reliability Guidance](../quality/reliability-observability.md).
+
 ## Reusable prompt
 
 ```text
@@ -28,6 +32,7 @@
 フォントは原則 Geist Sans + Noto Sans JP（コード用 Geist Mono）を採用し、docs/design/typography.md に従って配信・フォールバックを実装してください。案件に適した代替案があれば理由を示してください。
 ページ遷移設計は docs/design/page-navigation.md と docs/architecture/routing-navigation.md に従い、サイトマップ、戻る操作、スクロール・フォーカス、読込中・エラー、必要に応じた遷移アニメーションを設計してください。docs/workflows/navigation-review.md に基づく確認結果を示してください。
 プライバシーポリシーは docs/legal/privacy-policy-standard.md に従い、先にデータ取扱台帳を完成させ、実態に合う文案を作成してください。確認できない事項は事実を創作せず未確認と明記し、公開には運営者の承認を必要としてください。
+品質基準は docs/quality/quality-standard.md のQ-01〜Q-36と docs/workflows/quality-review.md に従い、主要ユーザー操作、WCAG、CWVのfield/lab区別、ブラウザ、Cloudflare監視と公開後の指標を評価してください。案件別品質予算は docs/quality/quality-targets.template.md で定義し、実行していない検証をPassとしないでください。
 セキュリティ基準は docs/security/security-standard.md のSEC-01〜SEC-36、Cloudflare対策は docs/security/cloudflare-hardening.md、チェックは docs/workflows/security-review.md に従ってください。脅威モデル・認証/認可・依存関係・修正済みRSCバージョン・リリースの判定と未確認項目を明示してください。
 Vinext/Cloudflareの実際の対応状況と外部素材/APIの利用条件を確認してください。
 最初に実装計画、最後にテスト結果・例外・未確認事項を報告してください。

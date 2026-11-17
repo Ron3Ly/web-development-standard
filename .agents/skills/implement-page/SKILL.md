@@ -16,3 +16,6 @@ description: Implement a website page following the standard React/Vinext/Cloudf
 ## Security before code changes
 
 Read `docs/security/security-standard.md` and `docs/security/cloudflare-hardening.md`. Check current RSC, React, Vinext and Vite plugin advisories against the resolved lockfile. Design server-side permission checks, D1 parameterization, safe R2 object access, outbound fetch allowlists, cookie/CSRF controls and secure response headers as applicable. Before finishing, execute relevant SEC-01–SEC-36 test cases in `docs/workflows/security-review.md`; state exactly which checks were actually run and what remains unverified.
+## Quality implementation
+
+Read `docs/quality/quality-standard.md`, `docs/quality/measurement-playbook.md` and `docs/workflows/quality-review.md`. For a real project, run available build/unit/integration/E2E and applicable browser/a11y/performance checks. Test Vinext RSC/Workers previews and external API failures; do not fabricate evidence. Distinguish Lighthouse lab performance, CrUX field data and no-data situations. Record Q-01–Q-36 results.

@@ -16,3 +16,6 @@ description: Review implemented pages for design consistency, responsiveness, us
 ## Security and operational review
 
 For user data, auth, RSC, APIs or deployed Cloudflare applications, read `docs/security/security-standard.md` and `docs/workflows/security-review.md`. Check evidence for authz IDOR/BOLA, CSRF, XSS, vulnerable RSC dependencies, secrets, storage exposure and CI/release configuration. Request non-destructive security tests on authorized staging only. Report severity and risk owner; never claim ASVS certification on the basis of a checklist.
+## Quality review gate
+
+Use `docs/quality/quality-standard.md`, `docs/quality/quality-targets.template.md`, and `docs/workflows/quality-review.md`. Inspect real user journeys, keyboard/assistive tech, text resizing, content accuracy, supported browsers, real error states, field-vs-lab CWV and Cloudflare reliability. Record Q status with concrete evidence and owner, not a single Lighthouse score.

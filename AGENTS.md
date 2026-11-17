@@ -12,6 +12,15 @@ Before planning, designing, or implementing a website:
 6. Read `docs/architecture/external-integrations.md` if using music APIs.
 7. Read the active project's brief. Use `docs/project/brief.template.md` if none exists.
 
+## Quality standards — required reading
+
+- Before setting acceptance criteria or reviewing any page, read `docs/quality/quality-standard.md`, `docs/quality/quality-targets.template.md`, and `docs/workflows/quality-review.md`; for measurements read `docs/quality/measurement-playbook.md`, and for Cloudflare reliability read `docs/quality/reliability-observability.md`.
+- Apply **Q-01–Q-36** to relevant pages with actual evidence. Build and test primary user flows, including failures, anonymous→Google login, D1/R2 consistency, external music API fallback, mobile browser behavior and content quality as applicable.
+- Google CWV good field thresholds: **LCP p75 ≤2.5s, INP p75 ≤200ms, CLS p75 ≤0.1**. These are distinct from Lighthouse lab scores. If field coverage is absent, use `Insufficient data` and perform lab/real-browser checks; never invent CWV measurements.
+- WCAG 2.2 AA is a candidate quality target; automated accessibility audits alone do not establish conformance. Base the scope on the project and follow WCAG-EM/appropriate manual tests.
+- Browser/version support follows the target audience and Web Platform Baseline. **Never impose a universal Lighthouse 90 score or 99.9% uptime SLO** without project acceptance.
+- Record Q-check statuses as Pass/Fail/Not tested/Not applicable and quality risk owners. Quality does not waive SEC, privacy or navigation release requirements.
+
 ## Technical defaults
 - React, Vinext, RSC where supported, Vite/Rolldown, Cloudflare Workers.
 - D1 for relational storage, R2 for objects, **only when required**.
@@ -50,8 +59,8 @@ Before planning, designing, or implementing a website:
 3. Document assumptions and deviations before installing new frameworks/libraries.
 4. Implement minimal, reusable, accessible code; protect secrets server-side.
 5. Where available, run the project's lint, type check, tests and production build.
-6. Run applicable **SEC-01–SEC-36** checks and threat-model review via `docs/workflows/security-review.md`, documenting Passed/Failed/Not tested/Not applicable with evidence; do not claim security certification or run destructive tests against production. Review the applicable 30-item guideline checks, including responsive behavior, selection and table workflows, WCAG/APG interactions, Core Web Vitals, server-side authorization, privacy, E2E tests and monitoring as relevant. Validate actual font loading, Japanese glyph coverage, 200% zoom, fallback and CLS. Verify navigation using `docs/workflows/navigation-review.md`: direct URLs, back/forward, filters, auth return, keyboard/screen reader focus, reduced motion, slow network, 404/error and page-view analytics. Run the relevant PR-01–PR-20 privacy checks in `docs/workflows/privacy-review.md` and report open items; do not describe an unreviewed template as a published, legally verified policy. Distinguish recommendations from mandatory requirements and report unverified checks.
-7. Report changed files, security check results, remaining risks, validation, known limitations and deviations. Record owner-approved exceptions instead of silently weakening controls.
+6. Run applicable **Q-01–Q-36** and **SEC-01–SEC-36** checks and threat-model review via `docs/workflows/security-review.md`, documenting Passed/Failed/Not tested/Not applicable with evidence; do not claim security certification or run destructive tests against production. Review the applicable 30-item guideline checks, including responsive behavior, selection and table workflows, WCAG/APG interactions, Core Web Vitals, server-side authorization, privacy, E2E tests and monitoring as relevant. Validate actual font loading, Japanese glyph coverage, 200% zoom, fallback and CLS. Verify navigation using `docs/workflows/navigation-review.md`: direct URLs, back/forward, filters, auth return, keyboard/screen reader focus, reduced motion, slow network, 404/error and page-view analytics. Run the relevant PR-01–PR-20 privacy checks in `docs/workflows/privacy-review.md` and report open items; do not describe an unreviewed template as a published, legally verified policy. Distinguish recommendations from mandatory requirements and report unverified checks.
+7. Report changed files, quality/security check results, field-vs-lab measurement sources, remaining risks, validation, known limitations and deviations. Record owner-approved exceptions instead of silently weakening controls.
 
 ## Rules for other repositories
 A `GitHub URL` to this repository **does not automatically install or activate these instructions**. Copy the relevant standard into each target repo, or explicitly make these files accessible to GPT Work / Codex and direct the agent to read them. Codex's automatic AGENTS.md discovery follows the **working repository's hierarchy**, not unrelated repositories.

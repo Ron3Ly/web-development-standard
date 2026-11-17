@@ -35,3 +35,6 @@
 ## Security hardening
 
 For operational measures, read [Cloudflare Hardening](../security/cloudflare-hardening.md) and [SEC-25–SEC-29](../security/security-standard.md). Workers secrets are not ordinary Wrangler `vars`; do not commit `.dev.vars`/`.env`. Check D1 query bindings and migration permissions, R2 public-domain/`r2.dev` exposure and short-lived presigned bearer URLs. Review WAF and rate limits alongside application-level identity-aware controls; Cloudflare WAF is not a substitute for server-side authorization or patching vulnerable RSC dependencies.
+## Site quality / service level
+
+Read [Reliability and Observability](../quality/reliability-observability.md) and [Quality Standard Q-31–Q-36](../quality/quality-standard.md). Monitor relevant Workers exceptions, 5xx, latency, D1/R2 binding errors and upstream service failures; define a project-specific SLI/SLO, alert owner, rollback and recovery. Do not equate GA4/Cloudflare Web Analytics visitor counts with runtime reliability monitoring.
