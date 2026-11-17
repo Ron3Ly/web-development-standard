@@ -51,3 +51,7 @@ Use [Typography / Font Standards](typography.md) for default fonts and delivery 
 4. Test motion reduction and dark mode if supported. Confirm navigation menus, back/forward, current-page labels, URL state and route-change focus.
 5. Check no third-party icon/image violates the asset license.
 6. Note intentional exceptions in the project brief.
+
+## 2D game-specific icon and effect visual language
+
+For a 2D game, see [2D Game Asset Catalog](../game-assets/README.md) and [Web Game Asset Implementation](../game-assets/web-implementation.md). Keep pixel-art scaling, icon stroke/shape/color, animation timing, SFX loudness and visual feedback consistent. Animation and audio should not be the only way to understand game state. Check WCAG 2.3.1 for rapid flashing and respect reduced-motion preferences.

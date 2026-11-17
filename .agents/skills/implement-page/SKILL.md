@@ -19,3 +19,6 @@ Read `docs/security/security-standard.md` and `docs/security/cloudflare-hardenin
 ## Quality implementation
 
 Read `docs/quality/quality-standard.md`, `docs/quality/measurement-playbook.md` and `docs/workflows/quality-review.md`. For a real project, run available build/unit/integration/E2E and applicable browser/a11y/performance checks. Test Vinext RSC/Workers previews and external API failures; do not fabricate evidence. Distinguish Lighthouse lab performance, CrUX field data and no-data situations. Record Q-01–Q-36 results.
+## 2D game assets during implementation
+
+For games, read `docs/game-assets/web-implementation.md` and `docs/workflows/game-asset-review.md`. Record each chosen asset in `docs/game-assets/asset-register.template.md` copied to the project. Respect Web Audio autoplay/user gesture, RSC Client Component boundaries, Sprite/Canvas performance, flashing/reduced-motion, SVG safety and R2 raw asset license constraints. Do not add restricted assets to this shared standards repository.

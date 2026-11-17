@@ -62,3 +62,7 @@ WCAG 2.2 AAは標準的な検討目標。法・契約の適用要件が優先。
 Cloudflareは[Workers Observability](https://developers.cloudflare.com/workers/observability/)でLogs/Traces/Metrics/Issuesを確認。D1/R2や音楽APIの失敗時の利用者影響を確認し、OAuthトークンや個人データをログに残さない。
 
 実行結果は**Pass/Fail/Not tested/N/A**、フィールドデータ不足は**Insufficient data**で報告。未実施テストや過去の実績を作り上げない。
+
+## 2D Webゲームの素材と実行時体験の計測
+
+ゲームの主要画面では、初回表示/スプライト・音声読込時間、音声再生のユーザー操作依存、ミュート/BGM/SFX音量、デコード失敗、モバイル端末の2D FPS/CPU/メモリ、エフェクトの低刺激設定、WCAG 2.3.1点滅条件を検証。ライセンスを含む [GAME-01〜GAME-24](../workflows/game-asset-review.md) とともに報告。ゲーム画面の高頻度Canvas描画とページUIのCWVは測定対象が異なるため、**ゲーム操作中のFPS/遅延は別に測定**する。

@@ -117,3 +117,7 @@
 - W3C Internationalization: https://www.w3.org/International/techniques/authoring-html.en
 - Cloudflare Workers Observability: https://developers.cloudflare.com/workers/observability/
 - Google SRE Error Budget Policy: https://sre.google/workbook/error-budget-policy/
+
+## 2D Webゲーム向けの追加品質レビュー
+
+2D Webゲームでは、このQ-01〜Q-36に加えて [GAME-01〜GAME-24](../workflows/game-asset-review.md) を実施する。素材のライセンス・クレジット・Web配信可否、音声の初回ユーザー操作/ミュート、SFX重なり・各ブラウザのcodec、2D視覚効果の点滅/低減設定、ピクセル表現・描画負荷の確認が必要。[ゲーム素材の実装指針](../game-assets/web-implementation.md)を参照する。

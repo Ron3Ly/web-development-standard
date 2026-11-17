@@ -19,3 +19,6 @@ For user data, auth, RSC, APIs or deployed Cloudflare applications, read `docs/s
 ## Quality review gate
 
 Use `docs/quality/quality-standard.md`, `docs/quality/quality-targets.template.md`, and `docs/workflows/quality-review.md`. Inspect real user journeys, keyboard/assistive tech, text resizing, content accuracy, supported browsers, real error states, field-vs-lab CWV and Cloudflare reliability. Record Q status with concrete evidence and owner, not a single Lighthouse score.
+## 2D game asset review
+
+For game projects, consult `docs/game-assets/README.md`, `docs/game-assets/licensing.md`, `docs/game-assets/web-implementation.md` and complete `docs/workflows/game-asset-review.md`. Review GAME-01–GAME-24, audio unlock/mute, browser format compatibility, flashing/reduced-motion, Credits/author attribution and license constraints for static/GitHub/R2 raw asset distribution. Record Not tested and Needs permission explicitly.

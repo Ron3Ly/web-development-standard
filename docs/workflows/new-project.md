@@ -23,6 +23,10 @@
 
 After completing the initial project brief and before implementation, define the target pages, user journeys, representative browsers and accessibility scope using [Web Quality Standard](../quality/quality-standard.md) and [Project Targets](../quality/quality-targets.template.md). During implementation, follow [Measurement Playbook](../quality/measurement-playbook.md). Before release, complete [Quality Review](quality-review.md) alongside security, privacy and navigation gates. Record field vs lab metrics separately and never mark untested work Pass. Set Cloudflare SLO/monitoring based on [Reliability Guidance](../quality/reliability-observability.md).
 
+## Additional 2D game asset workflow (only for game projects)
+
+For web games, review [game-asset source catalog](../game-assets/README.md), [licensing](../game-assets/licensing.md) and [implementation guidance](../game-assets/web-implementation.md). Copy [asset register](../game-assets/asset-register.template.md) into the actual game repository, select individual icons/SFX/VFX, verify their authors/licenses and add a Credits page as required. Run [GAME-01〜GAME-24](game-asset-review.md), including browser audio autoplay, flash/reduced-motion, asset size, R2 distribution and source-redistribution checks. **Do not copy third-party binaries into this shared standards repo.**
+
 ## Reusable prompt
 
 ```text
@@ -32,6 +36,7 @@ After completing the initial project brief and before implementation, define the
 フォントは原則 Geist Sans + Noto Sans JP（コード用 Geist Mono）を採用し、docs/design/typography.md に従って配信・フォールバックを実装してください。案件に適した代替案があれば理由を示してください。
 ページ遷移設計は docs/design/page-navigation.md と docs/architecture/routing-navigation.md に従い、サイトマップ、戻る操作、スクロール・フォーカス、読込中・エラー、必要に応じた遷移アニメーションを設計してください。docs/workflows/navigation-review.md に基づく確認結果を示してください。
 プライバシーポリシーは docs/legal/privacy-policy-standard.md に従い、先にデータ取扱台帳を完成させ、実態に合う文案を作成してください。確認できない事項は事実を創作せず未確認と明記し、公開には運営者の承認を必要としてください。
+2D Webゲームを作る場合は docs/game-assets/README.md / docs/game-assets/licensing.md / docs/game-assets/web-implementation.md を参照し、個別素材の作者・ライセンス・クレジット・配布方式を台帳に記録してください。docs/workflows/game-asset-review.md のGAME-01〜GAME-24を検証し、未確認の素材は利用しないでください。
 品質基準は docs/quality/quality-standard.md のQ-01〜Q-36と docs/workflows/quality-review.md に従い、主要ユーザー操作、WCAG、CWVのfield/lab区別、ブラウザ、Cloudflare監視と公開後の指標を評価してください。案件別品質予算は docs/quality/quality-targets.template.md で定義し、実行していない検証をPassとしないでください。
 セキュリティ基準は docs/security/security-standard.md のSEC-01〜SEC-36、Cloudflare対策は docs/security/cloudflare-hardening.md、チェックは docs/workflows/security-review.md に従ってください。脅威モデル・認証/認可・依存関係・修正済みRSCバージョン・リリースの判定と未確認項目を明示してください。
 Vinext/Cloudflareの実際の対応状況と外部素材/APIの利用条件を確認してください。

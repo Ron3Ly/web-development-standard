@@ -35,6 +35,7 @@ GPT Work・Codex・GitHubで再利用する、Webサイト設計・実装の共�
 - **Webアプリ開発ガイドライン**：[全30項目（6分野）](docs/design/ui-guidelines.md) — UX・操作性／UI・情報設計／アクセシビリティ・利用環境／性能・信頼性／セキュリティ・データ保護／品質管理・運用・改善。アップロードされた原文を採用し、規格上の必須事項と実務上の推奨を区別します。
 - **UIコンポーネント基盤の候補**：[Astryx（Meta）](https://github.com/meta/astryx) — 150以上のReactコンポーネント、テーマ、CLI。デジタル庁の設計指針と併用可能。導入は任意で、Vinext / RSC / Cloudflareとの実動作検証が必要。詳しくは [Astryx利用指針](docs/design/astryx.md)。
 - **UIアセット**：[Lucide Animated](https://lucide-animated.com/) / [ICOOON MONO](https://icooon-mono.com/) / [デジタル庁イラストレーション・アイコン](https://www.digital.go.jp/policies/servicedesign/designsystem/Illustration_Icons) / [freeicon.dev（Motive）](https://freeicon.dev/)
+- **2D Webゲーム素材**：[Icons / SFX / VFX ソース一覧](docs/game-assets/README.md) ＋ [ライセンス/クレジット](docs/game-assets/licensing.md) ＋ [Web実装](docs/game-assets/web-implementation.md) ＋ [GAME-01〜GAME-24チェック](docs/workflows/game-asset-review.md)。game-icons.net・Kenney・OpenGameArt・Freesound・Mixkit・Sonniss・itch.ioを採用判断の候補として整理します（個別ライセンス確認が必要）。
 - ライセンスは出典ごとに異なります。詳細は [UIアセット使用指針](docs/design/ui-assets.md) に記載します。
 
 ## ドキュメント一覧
@@ -73,6 +74,13 @@ GPT Work・Codex・GitHubで再利用する、Webサイト設計・実装の共�
 | [docs/design/astryx.md](docs/design/astryx.md) | Astryxコンポーネント・テーマ・CLIの導入判断 |
 | [docs/design/ui-references.md](docs/design/ui-references.md) | 参照UI・設計パターンの取り入れ方 |
 | [docs/design/ui-assets.md](docs/design/ui-assets.md) | アイコン・イラスト素材と利用条件 |
+| [docs/game-assets/README.md](docs/game-assets/README.md) | 2Dゲーム用アイコン・スプライト・SFX・音楽ジングル・VFX素材の公式候補 |
+| [docs/game-assets/licensing.md](docs/game-assets/licensing.md) | CC0 / CC BY / 各サイトの独自利用条件とクレジット規則 |
+| [docs/game-assets/asset-register.template.md](docs/game-assets/asset-register.template.md) | ゲーム別の採用ファイルと権利・配布方式の台帳 |
+| [docs/game-assets/credits.template.md](docs/game-assets/credits.template.md) | ゲーム画面に表示する素材クレジットの雛形 |
+| [docs/game-assets/web-implementation.md](docs/game-assets/web-implementation.md) | Web Audio / 2D描画・エフェクト・アクセシビリティ・Cloudflare配信 |
+| [docs/workflows/game-asset-review.md](docs/workflows/game-asset-review.md) | GAME-01〜GAME-24のライセンス・実装・公開前チェック |
+| [.agents/skills/game-assets/SKILL.md](.agents/skills/game-assets/SKILL.md) | GPT Work・Codexの2Dゲーム素材調査/採用手順 |
 | [docs/project/brief.template.md](docs/project/brief.template.md) | 案件固有要件のひな型 |
 | [docs/workflows/new-project.md](docs/workflows/new-project.md) | GPT Work / Codexでの案件開始手順 |
 | [.agents/skills/](.agents/skills/) | ページ設計・実装・UIレビューの手順 |
@@ -105,4 +113,4 @@ GPT Work・Codex・GitHubで再利用する、Webサイト設計・実装の共�
 
 このリポジトリは文章・規約を管理します。新規依存関係や大きな設計変更は、用途・互換性・メリット・移行コストを記録してから反映してください。
 
-最終整理：2026-11-17 / PR提案版 1.9（マージ後に適用）
+最終整理：2026-11-17 / PR提案版 1.10（マージ後に適用）

@@ -140,3 +140,7 @@ ReactチームはCVE-2025-55182（RSCの未認証RCE）と、DoS/ソース露出
 - GitHub Actions Security: https://docs.github.com/en/actions/how-tos/secure-your-work
 
 **本資料のSEC番号はこのリポジトリ独自の管理IDです。ASVSの要求IDを示していません。**
+
+## 2Dゲーム素材由来の追加リスク
+
+[ゲーム素材のライセンス](../game-assets/licensing.md)とは別に、外部SVGのスクリプト/外部参照、不審な音声・画像/圧縮ファイル、巨大アセットによるCPU/メモリ負荷、R2オブジェクトの誤公開を点検する。第三者の素材をHTMLへ無検証のinline SVGとして挿入しない。ゲーム内の外部音源を無断配信しない。参照: [GAME-01〜GAME-24](../workflows/game-asset-review.md)。
