@@ -18,3 +18,6 @@ Do not copy protected visual assets or adopt an unrelated technology stack.
 ## Security during design
 
 Before planning authenticated or data-backed pages, read `docs/security/security-standard.md` and identify route/role/data boundaries (SEC-01–SEC-12). Capture the threat-model assumptions, privacy requirements and high-risk user journeys in the project brief. Do not treat hiding controls in the UI as authorization.
+## Quality design
+
+Read `docs/quality/quality-standard.md` and the project-specific quality target. Identify tasks, interface states, real Japanese content, accessibility, browser support, expected loading/errors and public SEO requirements. Use Q-01–Q-18 and applicable Q-25–Q-30. A screenshot-only review is not functional acceptance.

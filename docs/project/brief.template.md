@@ -52,6 +52,21 @@
 - Icon/illustration choices and license notes:
 - Design system exceptions:
 
+## Quality targets and acceptance
+
+- Quality owner, release approver and agreed acceptance scope:
+- Important user journeys and error/empty/loading states to test:
+- Project quality targets (copy `docs/quality/quality-targets.template.md`):
+- Browsers/OS/device/network, Japanese/English and supported Web APIs:
+- Accessibility target/representative pages/manual keyboard and screen-reader checks:
+- Core Web Vitals field p75 targets and actual data coverage (PSI/CrUX/RUM):
+- Lighthouse CI / performance lab budget and measurement conditions:
+- Public SEO/content/indexability requirements and content owner:
+- Cloudflare Workers errors/latency + D1/R2 and API recovery expectations:
+- Service-level indicators/SLIs, SLO period and alert/recovery owner:
+- Unit/integration/Playwright E2E and visual regression coverage:
+- Q-01–Q-36 quality review statuses, evidence, exclusions and risk acceptance:
+
 ## Security requirements and risk acceptance
 
 - Security risk tier and OWASP ASVS 5.0.0 target level (L1 / L2 / L3, rationale):

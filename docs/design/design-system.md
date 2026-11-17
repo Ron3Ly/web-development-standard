@@ -11,6 +11,10 @@ Also read the [Webアプリケーション開発ガイドライン（6分野・3
 
 [Astryx](https://github.com/meta/astryx) is a candidate React component system (150+ components, theme tokens, templates and agent-oriented CLI). It complements — **does not supersede** — the Digital Agency Design System's principles. It is beta and requires React 19+; do not automatically install it. If the project chooses Astryx, use its documented component APIs, themes and tokens rather than rebuilding existing primitives. See [Astryx integration notes](astryx.md).
 
+## End-user quality verification
+
+The [Web Quality Standard](../quality/quality-standard.md) and [Quality Review](../workflows/quality-review.md) cover functional tasks, accessibility with manual review, responsive and browser behavior, content accuracy and measured performance. Visual conformity or Lighthouse category scores alone do not establish project quality. Apply alongside the existing [30-item source guideline](ui-guidelines.md).
+
 ## Navigation and page transitions
 
 Before implementing multi-page flows, read [Page Navigation UX & Transition Design](page-navigation.md), then the [Vinext technical rules](../architecture/routing-navigation.md). Make navigation location and destinations predictable, preserve browser back/forward semantics, manage focus/scroll deliberately, and treat animation as progressive enhancement. Verify against the [navigation review checklist](../workflows/navigation-review.md).
