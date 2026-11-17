@@ -30,6 +30,7 @@ GPT Work・Codex・GitHubで再利用する、Webサイト設計・実装の共�
 - **推奨フォント・実装方針**：[Typography / Font Standards](docs/design/typography.md) — 日本語・欧文の使い分け、用途別フォント、ライセンス、WOFF2、Vinextでの配信・性能の検証を規定。コピー用の[CSSトークン例](examples/typography.css)も用意。
 - **ページ遷移とナビゲーション**：[UX・ページ遷移設計](docs/design/page-navigation.md) ＋ [Vinext実装標準](docs/architecture/routing-navigation.md) ＋ [レビュー手順](docs/workflows/navigation-review.md)。情報設計から戻る操作、フォーカス、View Transitions、計測まで一貫して設計します。
 - **プライバシーポリシー**：[記述・運用標準](docs/legal/privacy-policy-standard.md) ＋ [公開文案テンプレート](docs/legal/privacy-policy.template.md) ＋ [データ取扱台帳](docs/legal/data-inventory.template.md) ＋ [公開前レビュー](docs/workflows/privacy-review.md)。日本の個人情報保護法、外部送信規律、Googleログイン/GA4、Cloudflare、外部音楽APIの事実確認を標準化します。
+- **Webサイトのセキュリティ標準**：[Security Standard](docs/security/security-standard.md) ＋ [脅威モデル雛形](docs/security/threat-model.template.md) ＋ [Cloudflare固有の対策](docs/security/cloudflare-hardening.md) ＋ [セキュリティレビュー](docs/workflows/security-review.md) ＋ [インシデント対応](docs/security/incident-response.md)。OWASP ASVS 5.0.0 / Top 10:2025、IPA、NIST SSDF、OAuth RFC 9700を参照します。
 - **Webアプリ開発ガイドライン**：[全30項目（6分野）](docs/design/ui-guidelines.md) — UX・操作性／UI・情報設計／アクセシビリティ・利用環境／性能・信頼性／セキュリティ・データ保護／品質管理・運用・改善。アップロードされた原文を採用し、規格上の必須事項と実務上の推奨を区別します。
 - **UIコンポーネント基盤の候補**：[Astryx（Meta）](https://github.com/meta/astryx) — 150以上のReactコンポーネント、テーマ、CLI。デジタル庁の設計指針と併用可能。導入は任意で、Vinext / RSC / Cloudflareとの実動作検証が必要。詳しくは [Astryx利用指針](docs/design/astryx.md)。
 - **UIアセット**：[Lucide Animated](https://lucide-animated.com/) / [ICOOON MONO](https://icooon-mono.com/) / [デジタル庁イラストレーション・アイコン](https://www.digital.go.jp/policies/servicedesign/designsystem/Illustration_Icons) / [freeicon.dev（Motive）](https://freeicon.dev/)
@@ -53,6 +54,12 @@ GPT Work・Codex・GitHubで再利用する、Webサイト設計・実装の共�
 | [docs/legal/privacy-policy.template.md](docs/legal/privacy-policy.template.md) | 案件別公開文案のひな型（未確定事項の記入が必要） |
 | [docs/legal/data-inventory.template.md](docs/legal/data-inventory.template.md) | 情報取得・利用・保存・外部送信・削除の棚卸し |
 | [docs/workflows/privacy-review.md](docs/workflows/privacy-review.md) | プライバシーポリシーの公開前・変更時レビュー |
+| [docs/security/security-standard.md](docs/security/security-standard.md) | SEC-01〜SEC-36のセキュリティ要求と根拠・適用範囲 |
+| [docs/security/threat-model.template.md](docs/security/threat-model.template.md) | 案件別脅威モデルとリスク台帳の雛形 |
+| [docs/security/cloudflare-hardening.md](docs/security/cloudflare-hardening.md) | Vinext/RSC/Workers/D1/R2・OAuth実装の対策 |
+| [docs/workflows/security-review.md](docs/workflows/security-review.md) | セキュリティの検証・リリースゲートと実施記録 |
+| [docs/security/incident-response.md](docs/security/incident-response.md) | インシデント初動、隔離、復旧、再発防止の手順 |
+| [.agents/skills/security-review/SKILL.md](.agents/skills/security-review/SKILL.md) | Codexによる脅威分析・セキュリティレビューの手順 |
 | [.agents/skills/privacy-policy/SKILL.md](.agents/skills/privacy-policy/SKILL.md) | Codex向けプライバシーポリシー作成・確認手順 |
 | [examples/typography.css](examples/typography.css) | 新規Webサイトに移植できるフォントスタック・タイポグラフィCSSの例 |
 | [docs/design/ui-guidelines.md](docs/design/ui-guidelines.md) | Webアプリケーション開発ガイドライン（6分野・全30項目、推奨基準と出典） |
@@ -91,4 +98,4 @@ GPT Work・Codex・GitHubで再利用する、Webサイト設計・実装の共�
 
 このリポジトリは文章・規約を管理します。新規依存関係や大きな設計変更は、用途・互換性・メリット・移行コストを記録してから反映してください。
 
-最終整理：2026-11-16 / 現在版 1.7
+最終整理：2026-11-16 / PR提案版 1.8（マージ後に適用）

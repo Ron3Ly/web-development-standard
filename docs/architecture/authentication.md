@@ -24,3 +24,7 @@ These are **capabilities**, not a mandated auth provider or SDK.
 - Provider / session library: **not yet selected**.
 - Guest identity and persistence model: **not yet selected**.
 - Requirements for email, profile photos, linked music accounts and consent: **project-specific**.
+
+## Security-specific baseline
+
+Apply [SEC-05–SEC-12](../security/security-standard.md) and [Cloudflare hardening](../security/cloudflare-hardening.md). For Google OAuth/OpenID Connect, confirm exact redirect URI matching, transaction-specific state/nonce and PKCE as applicable to client type under [RFC 9700](https://www.rfc-editor.org/rfc/rfc9700.html); never use implicit/password grants. Revalidate sessions on account linking, control cookie flags and protect cookie-authenticated writes from CSRF. Require server-side object/tenant authorization even after login; guest IDs are not permission to read other guests' data. Check actual auth provider implementation before asserting protection.

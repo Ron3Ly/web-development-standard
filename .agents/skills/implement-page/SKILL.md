@@ -12,3 +12,7 @@ description: Implement a website page following the standard React/Vinext/Cloudf
 6. Protect credentials; ensure data authorization, allowlisted redirects and safe error/loading states. Confirm SPA page-view tracking setup does not duplicate GA4 events. Verify third-party scripts/data transfers and data deletion paths against the approved inventory; never present template privacy wording as legally reviewed.
 7. Check applicable guideline items: selection/keyboard interactions (1–16), compatibility (17–19), speed and concurrency (20–23), server-side auth and data protection (24–26), and tests/monitoring (27–30). Verify real font requests, Japanese glyphs, missing-font fallback, responsive line wraps and CLS. Run applicable lint, typecheck, tests and build from actual package scripts. Exercise the navigation test matrix on the actual app.
 8. Report what changed, what was checked and what remains unverified.
+
+## Security before code changes
+
+Read `docs/security/security-standard.md` and `docs/security/cloudflare-hardening.md`. Check current RSC, React, Vinext and Vite plugin advisories against the resolved lockfile. Design server-side permission checks, D1 parameterization, safe R2 object access, outbound fetch allowlists, cookie/CSRF controls and secure response headers as applicable. Before finishing, execute relevant SEC-01–SEC-36 test cases in `docs/workflows/security-review.md`; state exactly which checks were actually run and what remains unverified.

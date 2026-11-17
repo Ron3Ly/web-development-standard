@@ -39,3 +39,7 @@ All items are **optional**. Introduce only when a product feature requires them.
 - https://api.setlist.fm/docs/1.0/index.html
 - https://musicbrainz.org/doc/MusicBrainz_API
 - https://developers.deezer.com/
+
+## Security controls for providers
+
+Apply [SEC-16, SEC-20, SEC-29 and SEC-30](../security/security-standard.md). Pin and monitor SDK dependencies; use minimal OAuth scopes and rotate/revoke tokens; never expose provider credentials to client bundles. When fetching artist images or other third-party URLs, avoid unrestricted server-side URL fetches: prefer fixed provider endpoints/allowlisted hosts and evaluate DNS/redirect SSRF bypasses, timeouts, response sizes and cache/rights constraints. Verify webhook signatures if a provider supports webhooks; avoid logging access tokens or PII. Public catalog requests and user-account integrations have different security and authorization requirements.
