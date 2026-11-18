@@ -49,3 +49,6 @@ Use [Web Security Standard](../security/security-standard.md) and the [release c
 ## Application quality verification
 
 Before release, apply [Quality Standard](../quality/quality-standard.md) and [Quality Review](../workflows/quality-review.md). Verify actual Vinext/RSC rendering/streaming/hydration on Workers previews, not only the development server. A successful build is not an end-user quality measurement. Use per-project budgets and test matrices.
+## 2D game artwork / sound / VFX (optional)
+
+The standard stack does **not** require adding a game engine. For 2D web games only, consult [Game Asset Sources](../game-assets/README.md), [Licensing Rules](../game-assets/licensing.md) and [GAME review](../workflows/game-asset-review.md). Actual game rendering/audio must respect browser user-activation rules, RSC client boundaries, reduced motion, and Cloudflare static/R2 delivery controls. Spotify/Apple Music API access is not a license to redistribute recordings as in-game audio.

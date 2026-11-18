@@ -38,3 +38,6 @@ For operational measures, read [Cloudflare Hardening](../security/cloudflare-har
 ## Site quality / service level
 
 Read [Reliability and Observability](../quality/reliability-observability.md) and [Quality Standard Q-31–Q-36](../quality/quality-standard.md). Monitor relevant Workers exceptions, 5xx, latency, D1/R2 binding errors and upstream service failures; define a project-specific SLI/SLO, alert owner, rollback and recovery. Do not equate GA4/Cloudflare Web Analytics visitor counts with runtime reliability monitoring.
+## Game assets (2D / optional)
+
+Before hosting 2D game sprites, icons, sound effects, music or VFX on Cloudflare R2, read [Game Asset Licensing](../game-assets/licensing.md) and [Web Implementation](../game-assets/web-implementation.md). R2 public URLs can expose the original audio/image files; licensed permission to **incorporate** an item into a commercial game is not automatically permission to redistribute the raw asset as a stand-alone file, source pack or template. Verify origin/CORS/cache/size, object access controls and copyright before upload.

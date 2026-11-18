@@ -21,3 +21,6 @@ Before planning authenticated or data-backed pages, read `docs/security/security
 ## Quality design
 
 Read `docs/quality/quality-standard.md` and the project-specific quality target. Identify tasks, interface states, real Japanese content, accessibility, browser support, expected loading/errors and public SEO requirements. Use Q-01–Q-18 and applicable Q-25–Q-30. A screenshot-only review is not functional acceptance.
+## 2D game-specific asset design
+
+If designing a 2D browser game, read `docs/game-assets/README.md`, `docs/game-assets/licensing.md`, and `docs/game-assets/web-implementation.md`. Choose a consistent pixel/vector UI style, accessible game feedback and user-controlled audio/VFX. Favor verified CC0 options, and reserve space in the UI for asset credits when needed.

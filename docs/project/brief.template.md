@@ -52,6 +52,17 @@
 - Icon/illustration choices and license notes:
 - Design system exceptions:
 
+## 2D Web game assets (only for game projects)
+
+- Genre, pixel/vector visual language, game area, target browser/device:
+- Selected icons/UI/sprites/VFX/SFX/BGM and target file sizes:
+- Asset source & license inventory (copy `docs/game-assets/asset-register.template.md`):
+- Attribution/Credits UI and link (when required by each asset's license):
+- Commercial/ads/paid use and source/public GitHub/R2 distribution rights:
+- User-gesture audio enablement, volume/mute, non-audio cues, supported codecs:
+- VFX reduced motion, flashing threshold WCAG 2.3.1, device FPS/texture budget:
+- GAME-01–GAME-24 statuses and permission/licensing approver:
+
 ## Quality targets and acceptance
 
 - Quality owner, release approver and agreed acceptance scope:

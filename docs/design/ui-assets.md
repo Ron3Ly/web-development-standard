@@ -30,3 +30,7 @@ Use assets that fit the product's visual language and accessibility needs. A URL
 - https://icooon-mono.com/
 - https://www.digital.go.jp/policies/servicedesign/designsystem/Illustration_Icons
 - https://freeicon.dev/
+
+## 2D Web games (specialized assets)
+
+This general UI assets guide is supplemented by the [2D game icons / SFX / VFX source catalog](../game-assets/README.md), [license and credit rules](../game-assets/licensing.md), and [GAME-01–GAME-24 review](../workflows/game-asset-review.md). RPG/game icons (Game-icons.net), CC0 sprites and effects (Kenney), and audio libraries require **per-asset licensing**, which differs from the normal website icon sources above. Do not assume that an external site's free icon or animated SVG library is also licensed for redistribution as a public game-asset pack.
